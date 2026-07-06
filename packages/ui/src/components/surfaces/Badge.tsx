@@ -6,12 +6,15 @@ import { cn } from '../../utils';
 export type BadgeVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
 export type BadgeSize = 'sm' | 'md';
 
+/**
+ * Badge surface indicator.
+ */
 export type BadgeProps = {
   children?: React.ReactNode;
   className?: string;
   variant?: BadgeVariant;
   size?: BadgeSize;
-};
+} & Omit<React.ComponentPropsWithoutRef<'span'>, 'children' | 'className'>;
 
 const getVariantTokens = (variant: BadgeVariant) => {
   return tokens.colors[variant];
@@ -40,7 +43,7 @@ const getSizeTokens = (size: BadgeSize) => {
 };
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
-  { children, className, variant = 'primary', size = 'md' },
+  { children, className, variant = 'primary', size = 'md', ...rest },
   ref,
 ) {
   const v = getVariantTokens(variant);
@@ -72,6 +75,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(function Badg
           whiteSpace: 'nowrap',
         } as React.CSSProperties
       }
+      {...rest}
     >
       {children}
     </span>

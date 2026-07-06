@@ -8,7 +8,7 @@ import { cn } from '../../utils';
  *
  * Simple flexbox layout with direction and tokenized gap.
  */
-export type StackProps = {
+export type StackProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'children' | 'className'> & {
   /** Layout contents */
   children?: React.ReactNode;
   /** Optional extra className */
@@ -27,6 +27,7 @@ export type StackProps = {
 
 const gapByToken: Record<NonNullable<StackProps['gap']>, string> = {
   none: '0',
+
   xs: tokens.spacing.xs,
   sm: tokens.spacing.sm,
   md: tokens.spacing.md,
@@ -38,7 +39,7 @@ const gapByToken: Record<NonNullable<StackProps['gap']>, string> = {
  * Layout primitive for simple spacing between children.
  */
 export const Stack = React.forwardRef<HTMLDivElement, StackProps>(function Stack(
-  { children, className, direction = 'vertical', gap = 'md', align, justify, wrap },
+  { children, className, direction = 'vertical', gap = 'md', align, justify, wrap, ...rest },
   ref,
 ) {
   return (
@@ -55,6 +56,7 @@ export const Stack = React.forwardRef<HTMLDivElement, StackProps>(function Stack
           flexWrap: wrap ? 'wrap' : 'nowrap',
         } as React.CSSProperties
       }
+      {...rest}
     >
       {children}
     </div>

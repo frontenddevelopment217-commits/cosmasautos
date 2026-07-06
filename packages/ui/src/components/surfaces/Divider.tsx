@@ -5,13 +5,16 @@ import { cn } from '../../utils';
 
 export type DividerOrientation = 'horizontal' | 'vertical';
 
+/**
+ * Divider surface element.
+ */
 export type DividerProps = {
   className?: string;
   orientation?: DividerOrientation;
-};
+} & Omit<React.ComponentPropsWithoutRef<'hr'>, 'className'>;
 
 export const Divider = React.forwardRef<HTMLHRElement, DividerProps>(function Divider(
-  { className, orientation = 'horizontal' },
+  { className, orientation = 'horizontal', ...rest },
   ref,
 ) {
   return (
@@ -29,6 +32,7 @@ export const Divider = React.forwardRef<HTMLHRElement, DividerProps>(function Di
           alignSelf: orientation === 'vertical' ? 'stretch' : 'auto',
         } as React.CSSProperties
       }
+      {...rest}
     />
   );
 });

@@ -1,7 +1,4 @@
-# TODO — Phase 4.5 — Layout Foundation
-
-- [ ] Implement `Container`, `Section`, `Stack`, `Grid` per spec using tokens + `cn()` + `forwardRef`
-- [ ] Update `packages/ui/src/components/layout/index.ts` exports to include prop types
-- [ ] Run builds/typecheck in the exact required order
-- [ ] Report results and stop on any failure
+- [ ] Understand repo + locate Section.tsx
+- [ ] Edit packages/ui/src/components/layout/Section.tsx to forward native props with proper polymorphic typing
+- [ ] Run builds/typecheck in required order, stop on first failure
 

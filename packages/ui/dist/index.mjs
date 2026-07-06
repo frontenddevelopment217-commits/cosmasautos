@@ -668,7 +668,7 @@ var maxWidthBySize = {
   xl: "60rem",
   full: "100%"
 };
-var Container = React8.forwardRef(function Container2({ children, className, size = "md" }, ref) {
+var Container = React8.forwardRef(function Container2({ children, className, size = "md", ...rest }, ref) {
   return /* @__PURE__ */ React8.createElement(
     "div",
     {
@@ -679,7 +679,8 @@ var Container = React8.forwardRef(function Container2({ children, className, siz
         marginInline: "auto",
         maxWidth: maxWidthBySize[size],
         paddingInline: tokens.spacing.lg
-      }
+      },
+      ...rest
     },
     children
   );
@@ -691,7 +692,7 @@ var paddingYBySpacing = {
   md: tokens.spacing.md,
   lg: tokens.spacing.lg
 };
-var Section = React8.forwardRef(function Section2({ children, className, as = "section", spacing: spacing2 = "md" }, ref) {
+var Section = React8.forwardRef(function Section2({ children, className, as = "section", spacing: spacing2 = "md", ...rest }, ref) {
   const Element = as;
   return /* @__PURE__ */ React8.createElement(
     Element,
@@ -700,8 +701,10 @@ var Section = React8.forwardRef(function Section2({ children, className, as = "s
       className: cn("ui-section", className),
       style: {
         paddingTop: paddingYBySpacing[spacing2],
-        paddingBottom: paddingYBySpacing[spacing2]
-      }
+        paddingBottom: paddingYBySpacing[spacing2],
+        ...rest.style
+      },
+      ...rest
     },
     children
   );
@@ -715,7 +718,7 @@ var gapByToken = {
   lg: tokens.spacing.lg,
   xl: tokens.spacing.xl
 };
-var Stack = React8.forwardRef(function Stack2({ children, className, direction = "vertical", gap = "md", align, justify, wrap }, ref) {
+var Stack = React8.forwardRef(function Stack2({ children, className, direction = "vertical", gap = "md", align, justify, wrap, ...rest }, ref) {
   return /* @__PURE__ */ React8.createElement(
     "div",
     {
@@ -728,7 +731,8 @@ var Stack = React8.forwardRef(function Stack2({ children, className, direction =
         alignItems: align,
         justifyContent: justify,
         flexWrap: wrap ? "wrap" : "nowrap"
-      }
+      },
+      ...rest
     },
     children
   );
@@ -742,7 +746,7 @@ var gapByToken2 = {
   lg: tokens.spacing.lg,
   xl: tokens.spacing.xl
 };
-var Grid = React8.forwardRef(function Grid2({ children, className, columns = 1, gap = "md" }, ref) {
+var Grid = React8.forwardRef(function Grid2({ children, className, columns = 1, gap = "md", ...rest }, ref) {
   return /* @__PURE__ */ React8.createElement(
     "div",
     {
@@ -752,7 +756,8 @@ var Grid = React8.forwardRef(function Grid2({ children, className, columns = 1, 
         display: "grid",
         gridTemplateColumns: `repeat(${columns},minmax(0,1fr))`,
         gap: gapByToken2[gap]
-      }
+      },
+      ...rest
     },
     children
   );
@@ -764,7 +769,7 @@ function Navbar(props) {
 function Footer(props) {
   return /* @__PURE__ */ React8.createElement("footer", null, props.children);
 }
-var Card = React8.forwardRef(function Card2({ children, className, elevated, outlined }, ref) {
+var Card = React8.forwardRef(function Card2({ children, className, elevated, outlined, ...rest }, ref) {
   return /* @__PURE__ */ React8.createElement(
     "div",
     {
@@ -780,7 +785,8 @@ var Card = React8.forwardRef(function Card2({ children, className, elevated, out
         boxShadow: elevated ? tokens.shadows.md : tokens.shadows.none,
         fontFamily: tokens.typography.fontFamily.sans,
         color: tokens.colors.surface.onBase
-      }
+      },
+      ...rest
     },
     children
   );
@@ -810,7 +816,7 @@ var getSizeTokens = (size) => {
       };
   }
 };
-var Badge = React8.forwardRef(function Badge2({ children, className, variant = "primary", size = "md" }, ref) {
+var Badge = React8.forwardRef(function Badge2({ children, className, variant = "primary", size = "md", ...rest }, ref) {
   const v = getVariantTokens(variant);
   const s = getSizeTokens(size);
   return /* @__PURE__ */ React8.createElement(
@@ -837,13 +843,14 @@ var Badge = React8.forwardRef(function Badge2({ children, className, variant = "
         fontWeight: s.fontWeight,
         userSelect: "none",
         whiteSpace: "nowrap"
-      }
+      },
+      ...rest
     },
     children
   );
 });
 Badge.displayName = "Badge";
-var Divider = React8.forwardRef(function Divider2({ className, orientation = "horizontal" }, ref) {
+var Divider = React8.forwardRef(function Divider2({ className, orientation = "horizontal", ...rest }, ref) {
   return /* @__PURE__ */ React8.createElement(
     "hr",
     {
@@ -857,7 +864,8 @@ var Divider = React8.forwardRef(function Divider2({ className, orientation = "ho
         margin: "0",
         flex: orientation === "vertical" ? "0 0 auto" : "0 0 auto",
         alignSelf: orientation === "vertical" ? "stretch" : "auto"
-      }
+      },
+      ...rest
     }
   );
 });

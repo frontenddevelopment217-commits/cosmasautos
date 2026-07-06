@@ -3,15 +3,18 @@ import * as React from 'react';
 import { tokens } from '../../styles';
 import { cn } from '../../utils';
 
+/**
+ * Card surface container.
+ */
 export type CardProps = {
   children?: React.ReactNode;
   className?: string;
   elevated?: boolean;
   outlined?: boolean;
-};
+} & Omit<React.ComponentPropsWithoutRef<'div'>, 'children' | 'className'>;
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(
-  { children, className, elevated, outlined },
+  { children, className, elevated, outlined, ...rest },
   ref,
 ) {
   return (
@@ -31,6 +34,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(
           color: tokens.colors.surface.onBase,
         } as React.CSSProperties
       }
+      {...rest}
     >
       {children}
     </div>
