@@ -1,4 +1,7 @@
-- [ ] Understand repo + locate Section.tsx
-- [ ] Edit packages/ui/src/components/layout/Section.tsx to forward native props with proper polymorphic typing
-- [ ] Run builds/typecheck in required order, stop on first failure
+- [ ] Implement Alert, Spinner, Skeleton, Progress, and feedback/index exports
+- [ ] Run: pnpm --filter @cosmas/ui build
+- [ ] Run: pnpm --filter @cosmas/ui typecheck
+- [ ] Run: pnpm --filter @cosmas/web build
+- [ ] Run: pnpm --filter @cosmas/admin build
+- [ ] Report results (build/typecheck errors if any)
 
