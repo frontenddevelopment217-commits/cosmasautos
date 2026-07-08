@@ -763,12 +763,282 @@ var Grid = React8.forwardRef(function Grid2({ children, className, columns = 1, 
   );
 });
 Grid.displayName = "Grid";
-function Navbar(props) {
-  return /* @__PURE__ */ React8.createElement("nav", null, props.children);
+var Navbar = React8.forwardRef(function Navbar2({ className, style, ...rest }, ref) {
+  return /* @__PURE__ */ React8.createElement(
+    "nav",
+    {
+      ref,
+      className: cn("ui-navbar", className),
+      style: {
+        padding: tokens.spacing.lg,
+        backgroundColor: tokens.colors.background.base,
+        borderBottom: `1px solid ${tokens.colors.border.base}`,
+        fontFamily: tokens.typography.fontFamily.sans,
+        ...style
+      },
+      ...rest
+    }
+  );
+});
+Navbar.displayName = "Navbar";
+var Footer = React8.forwardRef(function Footer2({ className, style, ...rest }, ref) {
+  return /* @__PURE__ */ React8.createElement(
+    "footer",
+    {
+      ref,
+      className: cn("ui-footer", className),
+      style: {
+        padding: tokens.spacing.lg,
+        backgroundColor: tokens.colors.background.elevated,
+        borderTop: `1px solid ${tokens.colors.border.base}`,
+        fontFamily: tokens.typography.fontFamily.sans,
+        ...style
+      },
+      ...rest
+    }
+  );
+});
+Footer.displayName = "Footer";
+var Breadcrumb = React8.forwardRef(function Breadcrumb2({ className, style, items, ...rest }, ref) {
+  const currentIndex = Math.max(-1, ...items.map((it, idx) => it.isCurrent ? idx : -1));
+  return /* @__PURE__ */ React8.createElement(
+    "nav",
+    {
+      ref,
+      "aria-label": "Breadcrumb",
+      className: cn("ui-breadcrumb", className),
+      style: {
+        padding: tokens.spacing.md,
+        fontFamily: tokens.typography.fontFamily.sans,
+        color: tokens.colors.text.secondary,
+        ...style
+      },
+      ...rest
+    },
+    /* @__PURE__ */ React8.createElement(
+      "ol",
+      {
+        style: {
+          listStyle: "none",
+          margin: 0,
+          padding: 0,
+          display: "flex",
+          gap: tokens.spacing.sm,
+          alignItems: "center"
+        }
+      },
+      items.map((item, idx) => {
+        const isCurrent = idx === currentIndex || item.isCurrent === true;
+        return /* @__PURE__ */ React8.createElement("li", { key: `${item.label}-${idx}`, "aria-current": isCurrent ? "page" : void 0 }, item.href && !isCurrent ? /* @__PURE__ */ React8.createElement(
+          "a",
+          {
+            href: item.href,
+            style: {
+              color: tokens.colors.primary.base,
+              textDecoration: "none"
+            }
+          },
+          item.label
+        ) : /* @__PURE__ */ React8.createElement("span", { style: { color: isCurrent ? tokens.colors.text.primary : "inherit" } }, item.label), idx < items.length - 1 ? /* @__PURE__ */ React8.createElement("span", { "aria-hidden": "true", style: { padding: `0 ${tokens.spacing.xs}` } }, "/") : null);
+      })
+    )
+  );
+});
+Breadcrumb.displayName = "Breadcrumb";
+var Pagination = React8.forwardRef(function Pagination2({ className, style, currentPage, totalPages, onPrevious, onNext, ...rest }, ref) {
+  const canGoPrev = currentPage > 1;
+  const canGoNext = currentPage < totalPages;
+  return /* @__PURE__ */ React8.createElement(
+    "nav",
+    {
+      ref,
+      "aria-label": "Pagination",
+      className: cn("ui-pagination", className),
+      style: {
+        padding: tokens.spacing.md,
+        fontFamily: tokens.typography.fontFamily.sans,
+        color: tokens.colors.text.primary,
+        ...style
+      },
+      ...rest
+    },
+    /* @__PURE__ */ React8.createElement("div", { style: { display: "flex", alignItems: "center", gap: tokens.spacing.sm } }, /* @__PURE__ */ React8.createElement(
+      "button",
+      {
+        type: "button",
+        onClick: canGoPrev ? onPrevious : void 0,
+        disabled: !canGoPrev,
+        "aria-label": "Previous page",
+        style: {
+          cursor: canGoPrev ? "pointer" : "not-allowed",
+          padding: `${tokens.spacing.xs} ${tokens.spacing.sm}`,
+          borderRadius: tokens.radius.sm,
+          border: `1px solid ${tokens.colors.border.base}`,
+          backgroundColor: tokens.colors.surface.base,
+          color: tokens.colors.text.secondary
+        }
+      },
+      "Previous"
+    ), /* @__PURE__ */ React8.createElement("div", { "aria-live": "polite", style: { fontWeight: tokens.typography.fontWeight.medium } }, "Page ", currentPage, " of ", totalPages), /* @__PURE__ */ React8.createElement(
+      "button",
+      {
+        type: "button",
+        onClick: canGoNext ? onNext : void 0,
+        disabled: !canGoNext,
+        "aria-label": "Next page",
+        style: {
+          cursor: canGoNext ? "pointer" : "not-allowed",
+          padding: `${tokens.spacing.xs} ${tokens.spacing.sm}`,
+          borderRadius: tokens.radius.sm,
+          border: `1px solid ${tokens.colors.border.base}`,
+          backgroundColor: tokens.colors.surface.base,
+          color: tokens.colors.text.secondary
+        }
+      },
+      "Next"
+    ))
+  );
+});
+Pagination.displayName = "Pagination";
+function getFirstEnabledTabId(tabs) {
+  return tabs.find((t) => !t.disabled)?.id ?? null;
 }
-function Footer(props) {
-  return /* @__PURE__ */ React8.createElement("footer", null, props.children);
-}
+var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, defaultValue, onValueChange, ...rest }, ref) {
+  const isControlled = value !== void 0;
+  const [uncontrolledValue, setUncontrolledValue] = React8.useState(() => {
+    return defaultValue ?? getFirstEnabledTabId(tabs) ?? "";
+  });
+  const selectedValue = isControlled ? value : uncontrolledValue;
+  React8.useEffect(() => {
+    if (!isControlled) {
+      const exists = tabs.some((t) => t.id === selectedValue && !t.disabled);
+      if (!exists) {
+        const nextId = getFirstEnabledTabId(tabs) ?? "";
+        setUncontrolledValue(nextId);
+        if (nextId) onValueChange?.(nextId);
+      }
+    }
+  }, [tabs]);
+  const setSelected = React8.useCallback(
+    (nextId) => {
+      if (isControlled) {
+        onValueChange?.(nextId);
+      } else {
+        setUncontrolledValue(nextId);
+        onValueChange?.(nextId);
+      }
+    },
+    [isControlled, onValueChange]
+  );
+  Math.max(
+    0,
+    tabs.findIndex((t) => t.id === selectedValue && !t.disabled)
+  );
+  const tabIds = tabs.map((t) => t.id);
+  const handleKeyDown = (event) => {
+    const key = event.key;
+    const enabledIndices = tabs.map((t, idx) => !t.disabled ? idx : -1).filter((idx) => idx !== -1);
+    if (enabledIndices.length === 0) return;
+    const currentEnabledIndexInList = enabledIndices.indexOf(tabIds.indexOf(selectedValue));
+    let nextEnabledIndex = null;
+    if (key === "ArrowRight") {
+      const nextPos = currentEnabledIndexInList === -1 ? 0 : (currentEnabledIndexInList + 1) % enabledIndices.length;
+      nextEnabledIndex = enabledIndices[nextPos];
+    } else if (key === "ArrowLeft") {
+      const nextPos = currentEnabledIndexInList === -1 ? enabledIndices.length - 1 : (currentEnabledIndexInList - 1 + enabledIndices.length) % enabledIndices.length;
+      nextEnabledIndex = enabledIndices[nextPos];
+    } else if (key === "Home") {
+      nextEnabledIndex = enabledIndices[0];
+    } else if (key === "End") {
+      nextEnabledIndex = enabledIndices[enabledIndices.length - 1];
+    }
+    if (nextEnabledIndex === null) return;
+    event.preventDefault();
+    const nextTab = tabs[nextEnabledIndex];
+    if (!nextTab.disabled) {
+      setSelected(nextTab.id);
+      const tabEl = document.getElementById(`ui-tab-${nextTab.id}`);
+      tabEl?.focus?.();
+    }
+  };
+  return /* @__PURE__ */ React8.createElement(
+    "div",
+    {
+      ref,
+      className: cn("ui-tabs", className),
+      style: {
+        fontFamily: tokens.typography.fontFamily.sans,
+        ...style
+      },
+      ...rest
+    },
+    /* @__PURE__ */ React8.createElement(
+      "div",
+      {
+        role: "tablist",
+        "aria-orientation": "horizontal",
+        onKeyDown: handleKeyDown,
+        style: {
+          display: "flex",
+          gap: tokens.spacing.sm,
+          borderBottom: `1px solid ${tokens.colors.border.base}`,
+          paddingBottom: tokens.spacing.sm
+        }
+      },
+      tabs.map((tab, idx) => {
+        const isSelected = tab.id === selectedValue;
+        const tabId = `ui-tab-${tab.id}`;
+        const panelId = `ui-tabpanel-${tab.id}`;
+        return /* @__PURE__ */ React8.createElement(
+          "button",
+          {
+            key: tab.id,
+            id: tabId,
+            type: "button",
+            role: "tab",
+            "aria-selected": isSelected ? "true" : "false",
+            "aria-controls": panelId,
+            disabled: tab.disabled,
+            tabIndex: isSelected ? 0 : -1,
+            onClick: () => {
+              if (!tab.disabled) setSelected(tab.id);
+            },
+            style: {
+              cursor: tab.disabled ? "not-allowed" : "pointer",
+              padding: `${tokens.spacing.xs} ${tokens.spacing.sm}`,
+              borderRadius: tokens.radius.sm,
+              border: `1px solid ${isSelected ? tokens.colors.primary.base : tokens.colors.border.base}`,
+              backgroundColor: isSelected ? tokens.colors.primary.base : tokens.colors.surface.base,
+              color: isSelected ? tokens.colors.primary.onBase : tokens.colors.text.secondary,
+              fontWeight: tokens.typography.fontWeight.medium
+            }
+          },
+          tab.label
+        );
+      })
+    ),
+    tabs.map((tab) => {
+      const isSelected = tab.id === selectedValue;
+      const panelId = `ui-tabpanel-${tab.id}`;
+      const tabId = `ui-tab-${tab.id}`;
+      return /* @__PURE__ */ React8.createElement(
+        "div",
+        {
+          key: tab.id,
+          id: panelId,
+          role: "tabpanel",
+          "aria-labelledby": tabId,
+          hidden: !isSelected,
+          style: {
+            paddingTop: tokens.spacing.lg
+          }
+        },
+        tab.panel
+      );
+    })
+  );
+});
+Tabs.displayName = "Tabs";
 var Card = React8.forwardRef(function Card2({ children, className, elevated, outlined, ...rest }, ref) {
   return /* @__PURE__ */ React8.createElement(
     "div",
@@ -983,4 +1253,4 @@ function Price(props) {
   return /* @__PURE__ */ React8.createElement("span", null, props.value ?? "");
 }
 
-export { Badge, ButtonBase, Card, Checkbox, Container, Divider, Footer, Grid, Heading, IconButton, Input, Navbar, Price, PrimaryButton, SecondaryButton, Section, Select, Stack, Text, TextArea, VehicleCard, animations, breakpoints, cn, colors, composeEventHandlers, isBrowser, mergeRefs, noop, radius, shadows, spacing, tokens, typography, zIndex };
+export { Badge, Breadcrumb, ButtonBase, Card, Checkbox, Container, Divider, Footer, Grid, Heading, IconButton, Input, Navbar, Pagination, Price, PrimaryButton, SecondaryButton, Section, Select, Stack, Tabs, Text, TextArea, VehicleCard, animations, breakpoints, cn, colors, composeEventHandlers, isBrowser, mergeRefs, noop, radius, shadows, spacing, tokens, typography, zIndex };

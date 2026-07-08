@@ -3,3 +3,12 @@ export type { NavbarProps } from './Navbar';
 
 export { Footer } from './Footer';
 export type { FooterProps } from './Footer';
+
+export { Breadcrumb } from './Breadcrumb';
+export type { BreadcrumbProps } from './Breadcrumb';
+
+export { Pagination } from './Pagination';
+export type { PaginationProps } from './Pagination';
+
+export { Tabs } from './Tabs';
+export type { TabsProps } from './Tabs';
