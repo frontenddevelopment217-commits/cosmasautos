@@ -1,9 +1,10 @@
-- [ ] Inspect existing app-shell and layout files (read-only)
-- [ ] Draft exact implementation plan for required files
-- [ ] User approval for plan
-- [ ] Create AppShell components: AppShell, Header, Footer, MobileNav, NavigationMenu, PageContainer, index
-- [ ] Update apps/web/app/layout.tsx to wrap children with <AppShell>
-- [ ] Ensure NavigationMenu safely renders when navigation config is empty
-- [ ] Run verification commands in order, stopping on first failure
-- [ ] Provide final report with build/typecheck results and any errors
+# TODO
+
+- [x] Inspect existing homepage components for React.forwardRef/ref usage.
+- [x] Convert all 8 homepage components to normal named function components.
+- [ ] Fix TypeScript syntax/indentation issues introduced during the refactor (HeroSection, NewsletterCTA, FooterCTA at minimum).
+- [ ] Re-run pnpm @cosmas/ui build.
+- [ ] Re-run pnpm @cosmas/ui typecheck.
+- [ ] Re-run pnpm @cosmas/web build.
+- [ ] Ensure runtime “Refs cannot be used in Server Components” error is resolved.
 

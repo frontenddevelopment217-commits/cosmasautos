@@ -86,5 +86,3 @@ export function Header({ className, style, ...props }: HeaderProps) {
     </header>
   );
 }
-
-Header.displayName = 'Header';

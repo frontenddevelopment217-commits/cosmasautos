@@ -1,0 +1,27 @@
+
+> @cosmas/web@0.0.0 build C:\projects\cosmasautos\apps\web
+> next build
+
+   ▲ Next.js 15.1.7
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+ ⚠ TypeScript project references are not fully supported. Attempting to build in incremental mode.
+   Collecting page data ...
+   Generating static pages (0/4) ...
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Refs cannot be used in Server Components, nor passed to Client Components.
+    at e (C:\projects\cosmasautos\node_modules\.pnpm\next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:84:17119)
+    at e$ (C:\projects\cosmasautos\node_modules\.pnpm\next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:84:17728)
+    at Array.toJSON (C:\projects\cosmasautos\node_modules\.pnpm\next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:84:14874)
+    at stringify (<anonymous>)
+    at eU (C:\projects\cosmasautos\node_modules\.pnpm\next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:84:26231)
+    at eB (C:\projects\cosmasautos\node_modules\.pnpm\next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:84:26461)
+    at eq (C:\projects\cosmasautos\node_modules\.pnpm\next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:84:27015)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at C:\projects\cosmasautos\node_modules\.pnpm\next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:84:39810
+    at node:internal/process/task_queues:151:7
+Export encountered an error on /page: /, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null
+ ELIFECYCLE  Command failed with exit code 1.

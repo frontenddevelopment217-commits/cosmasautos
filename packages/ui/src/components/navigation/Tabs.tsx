@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 
 import { tokens } from '../../styles';
@@ -32,7 +34,6 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   { className, style, tabs, value, defaultValue, onValueChange, ...rest },
   ref,
 ) {
-
   const isControlled = value !== undefined;
   const [uncontrolledValue, setUncontrolledValue] = React.useState(() => {
     return defaultValue ?? getFirstEnabledTabId(tabs) ?? '';
