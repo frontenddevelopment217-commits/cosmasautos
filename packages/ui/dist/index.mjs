@@ -1,4 +1,4 @@
-import * as React8 from 'react';
+import * as React41 from 'react';
 
 // src/components/buttons/ButtonBase.tsx
 
@@ -292,7 +292,7 @@ function getButtonStyles(variant, size) {
     hoverBackground: tokens.colors.secondary.hover
   };
 }
-var ButtonBase = React8.forwardRef(function ButtonBase2({
+var ButtonBase = React41.forwardRef(function ButtonBase2({
   className,
   children,
   disabled,
@@ -304,7 +304,7 @@ var ButtonBase = React8.forwardRef(function ButtonBase2({
 }, ref) {
   const isDisabled = disabled || loading;
   const styles = getButtonStyles(variant);
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     "button",
     {
       ref,
@@ -337,12 +337,12 @@ var ButtonBase = React8.forwardRef(function ButtonBase2({
       },
       ...rest
     },
-    loading ? /* @__PURE__ */ React8.createElement("span", { "aria-hidden": "true" }, "\u2026") : children
+    loading ? /* @__PURE__ */ React41.createElement("span", { "aria-hidden": "true" }, "\u2026") : children
   );
 });
-var PrimaryButton = React8.forwardRef(
+var PrimaryButton = React41.forwardRef(
   function PrimaryButton2({ className, children, size = "md", loading, disabled, type, ...rest }, ref) {
-    return /* @__PURE__ */ React8.createElement(
+    return /* @__PURE__ */ React41.createElement(
       ButtonBase,
       {
         ref,
@@ -358,9 +358,9 @@ var PrimaryButton = React8.forwardRef(
     );
   }
 );
-var SecondaryButton = React8.forwardRef(
+var SecondaryButton = React41.forwardRef(
   function SecondaryButton2({ className, children, size = "md", loading, disabled, type, ...rest }, ref) {
-    return /* @__PURE__ */ React8.createElement(
+    return /* @__PURE__ */ React41.createElement(
       ButtonBase,
       {
         ref,
@@ -376,9 +376,9 @@ var SecondaryButton = React8.forwardRef(
     );
   }
 );
-var IconButton = React8.forwardRef(
+var IconButton = React41.forwardRef(
   function IconButton2({ className, children, loading, disabled, type, "aria-label": ariaLabel, ...rest }, ref) {
-    return /* @__PURE__ */ React8.createElement(
+    return /* @__PURE__ */ React41.createElement(
       ButtonBase,
       {
         ref,
@@ -395,9 +395,9 @@ var IconButton = React8.forwardRef(
     );
   }
 );
-var Input = React8.forwardRef(function Input2({ label, helperText, error, className, id: idProp, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
+var Input = React41.forwardRef(function Input2({ label, helperText, error, className, id: idProp, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
   const id = idProp ?? void 0;
-  const reactId = React8.useId();
+  const reactId = React41.useId();
   const labelId = id ? `${id}__label` : `ui-input-label__${reactId}`;
   const helperId = `${labelId}__helper`;
   const errorId = `${labelId}__error`;
@@ -407,7 +407,7 @@ var Input = React8.forwardRef(function Input2({ label, helperText, error, classN
     error ? errorId : void 0
   ].filter(Boolean);
   const invalid = error != null && error !== false && error !== "";
-  return /* @__PURE__ */ React8.createElement("div", { className: cn("ui-input-root", className) }, label ? /* @__PURE__ */ React8.createElement("label", { id: labelId, htmlFor: id, style: labelStyle }, label) : null, /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement("div", { className: cn("ui-input-root", className) }, label ? /* @__PURE__ */ React41.createElement("label", { id: labelId, htmlFor: id, style: labelStyle }, label) : null, /* @__PURE__ */ React41.createElement(
     "input",
     {
       ...rest,
@@ -418,7 +418,7 @@ var Input = React8.forwardRef(function Input2({ label, helperText, error, classN
       "aria-describedby": describedByParts.length ? describedByParts.join(" ") : void 0,
       style: inputStyle(invalid)
     }
-  ), helperText ? /* @__PURE__ */ React8.createElement("div", { id: helperId, className: "ui-input-helper", style: helperStyle }, helperText) : null, invalid ? /* @__PURE__ */ React8.createElement("div", { id: errorId, className: "ui-input-error", style: errorStyle }, error) : null);
+  ), helperText ? /* @__PURE__ */ React41.createElement("div", { id: helperId, className: "ui-input-helper", style: helperStyle }, helperText) : null, invalid ? /* @__PURE__ */ React41.createElement("div", { id: errorId, className: "ui-input-error", style: errorStyle }, error) : null);
 });
 Input.displayName = "Input";
 var labelStyle = {
@@ -463,9 +463,9 @@ var errorStyle = {
   marginTop: tokens.spacing.xs,
   color: tokens.colors.danger.base
 };
-var TextArea = React8.forwardRef(function TextArea2({ label, helperText, error, className, id: idProp, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
+var TextArea = React41.forwardRef(function TextArea2({ label, helperText, error, className, id: idProp, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
   const id = idProp ?? void 0;
-  const reactId = React8.useId();
+  const reactId = React41.useId();
   const labelId = id ? `${id}__label` : `ui-textarea-label__${reactId}`;
   const helperId = `${labelId}__helper`;
   const errorId = `${labelId}__error`;
@@ -475,7 +475,7 @@ var TextArea = React8.forwardRef(function TextArea2({ label, helperText, error, 
     error ? errorId : void 0
   ].filter(Boolean);
   const invalid = error != null && error !== false && error !== "";
-  return /* @__PURE__ */ React8.createElement("div", { className: cn("ui-textarea-root", className) }, label ? /* @__PURE__ */ React8.createElement("label", { id: labelId, htmlFor: id, style: labelStyle2 }, label) : null, /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement("div", { className: cn("ui-textarea-root", className) }, label ? /* @__PURE__ */ React41.createElement("label", { id: labelId, htmlFor: id, style: labelStyle2 }, label) : null, /* @__PURE__ */ React41.createElement(
     "textarea",
     {
       ...rest,
@@ -486,7 +486,7 @@ var TextArea = React8.forwardRef(function TextArea2({ label, helperText, error, 
       "aria-describedby": describedByParts.length ? describedByParts.join(" ") : void 0,
       style: inputStyle2(invalid)
     }
-  ), helperText ? /* @__PURE__ */ React8.createElement("div", { id: helperId, className: "ui-textarea-helper", style: helperStyle2 }, helperText) : null, invalid ? /* @__PURE__ */ React8.createElement("div", { id: errorId, className: "ui-textarea-error", style: errorStyle2 }, error) : null);
+  ), helperText ? /* @__PURE__ */ React41.createElement("div", { id: helperId, className: "ui-textarea-helper", style: helperStyle2 }, helperText) : null, invalid ? /* @__PURE__ */ React41.createElement("div", { id: errorId, className: "ui-textarea-error", style: errorStyle2 }, error) : null);
 });
 TextArea.displayName = "TextArea";
 var labelStyle2 = {
@@ -533,8 +533,8 @@ var errorStyle2 = {
   marginTop: tokens.spacing.xs,
   color: tokens.colors.danger.base
 };
-var Select = React8.forwardRef(function Select2({ label, helperText, error, className, id, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
-  const reactId = React8.useId();
+var Select = React41.forwardRef(function Select2({ label, helperText, error, className, id, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
+  const reactId = React41.useId();
   const labelId = id ? `${id}__label` : `ui-select-label__${reactId}`;
   const helperId = `${labelId}__helper`;
   const errorId = `${labelId}__error`;
@@ -544,7 +544,7 @@ var Select = React8.forwardRef(function Select2({ label, helperText, error, clas
     error ? errorId : void 0
   ].filter(Boolean);
   const invalid = error != null && error !== false && error !== "";
-  return /* @__PURE__ */ React8.createElement("div", { className: cn("ui-select-root", className) }, label ? /* @__PURE__ */ React8.createElement("label", { id: labelId, htmlFor: id, style: labelStyle3 }, label) : null, /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement("div", { className: cn("ui-select-root", className) }, label ? /* @__PURE__ */ React41.createElement("label", { id: labelId, htmlFor: id, style: labelStyle3 }, label) : null, /* @__PURE__ */ React41.createElement(
     "select",
     {
       ...rest,
@@ -555,7 +555,7 @@ var Select = React8.forwardRef(function Select2({ label, helperText, error, clas
       "aria-describedby": describedByParts.length ? describedByParts.join(" ") : void 0,
       style: inputStyle3(invalid)
     }
-  ), helperText ? /* @__PURE__ */ React8.createElement("div", { id: helperId, className: "ui-select-helper", style: helperStyle3 }, helperText) : null, invalid ? /* @__PURE__ */ React8.createElement("div", { id: errorId, className: "ui-select-error", style: errorStyle3 }, error) : null);
+  ), helperText ? /* @__PURE__ */ React41.createElement("div", { id: helperId, className: "ui-select-helper", style: helperStyle3 }, helperText) : null, invalid ? /* @__PURE__ */ React41.createElement("div", { id: errorId, className: "ui-select-error", style: errorStyle3 }, error) : null);
 });
 Select.displayName = "Select";
 var labelStyle3 = {
@@ -601,8 +601,8 @@ var errorStyle3 = {
   marginTop: tokens.spacing.xs,
   color: tokens.colors.danger.base
 };
-var Checkbox = React8.forwardRef(function Checkbox2({ label, helperText, error, className, id, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
-  const reactId = React8.useId();
+var Checkbox = React41.forwardRef(function Checkbox2({ label, helperText, error, className, id, "aria-describedby": ariaDescribedBy, ...rest }, ref) {
+  const reactId = React41.useId();
   const labelId = id ? `${id}__label` : `ui-checkbox-label__${reactId}`;
   const helperId = `${labelId}__helper`;
   const errorId = `${labelId}__error`;
@@ -612,7 +612,7 @@ var Checkbox = React8.forwardRef(function Checkbox2({ label, helperText, error, 
     error ? errorId : void 0
   ].filter(Boolean);
   const invalid = error != null && error !== false && error !== "";
-  return /* @__PURE__ */ React8.createElement("div", { className: cn("ui-checkbox-root", className) }, /* @__PURE__ */ React8.createElement("div", { style: rowStyle }, /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement("div", { className: cn("ui-checkbox-root", className) }, /* @__PURE__ */ React41.createElement("div", { style: rowStyle }, /* @__PURE__ */ React41.createElement(
     "input",
     {
       ...rest,
@@ -624,7 +624,7 @@ var Checkbox = React8.forwardRef(function Checkbox2({ label, helperText, error, 
       "aria-describedby": describedByParts.length ? describedByParts.join(" ") : void 0,
       style: inputStyle4(invalid)
     }
-  ), label ? /* @__PURE__ */ React8.createElement("label", { id: labelId, htmlFor: id, style: labelTextStyle }, label) : null), helperText ? /* @__PURE__ */ React8.createElement("div", { id: helperId, className: "ui-checkbox-helper", style: helperStyle4 }, helperText) : null, invalid ? /* @__PURE__ */ React8.createElement("div", { id: errorId, className: "ui-checkbox-error", style: errorStyle4 }, error) : null);
+  ), label ? /* @__PURE__ */ React41.createElement("label", { id: labelId, htmlFor: id, style: labelTextStyle }, label) : null), helperText ? /* @__PURE__ */ React41.createElement("div", { id: helperId, className: "ui-checkbox-helper", style: helperStyle4 }, helperText) : null, invalid ? /* @__PURE__ */ React41.createElement("div", { id: errorId, className: "ui-checkbox-error", style: errorStyle4 }, error) : null);
 });
 Checkbox.displayName = "Checkbox";
 var rowStyle = {
@@ -668,8 +668,8 @@ var maxWidthBySize = {
   xl: "60rem",
   full: "100%"
 };
-var Container = React8.forwardRef(function Container2({ children, className, size = "md", ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(
+var Container = React41.forwardRef(function Container2({ children, className, size = "md", ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
     "div",
     {
       ref,
@@ -692,9 +692,9 @@ var paddingYBySpacing = {
   md: tokens.spacing.md,
   lg: tokens.spacing.lg
 };
-var Section = React8.forwardRef(function Section2({ children, className, as = "section", spacing: spacing2 = "md", ...rest }, ref) {
+var Section = React41.forwardRef(function Section2({ children, className, as = "section", spacing: spacing2 = "md", ...rest }, ref) {
   const Element = as;
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     Element,
     {
       ref,
@@ -718,8 +718,8 @@ var gapByToken = {
   lg: tokens.spacing.lg,
   xl: tokens.spacing.xl
 };
-var Stack = React8.forwardRef(function Stack2({ children, className, direction = "vertical", gap = "md", align, justify, wrap, ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(
+var Stack = React41.forwardRef(function Stack2({ children, className, direction = "vertical", gap = "md", align, justify, wrap, ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
     "div",
     {
       ref,
@@ -746,8 +746,8 @@ var gapByToken2 = {
   lg: tokens.spacing.lg,
   xl: tokens.spacing.xl
 };
-var Grid = React8.forwardRef(function Grid2({ children, className, columns = 1, gap = "md", ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(
+var Grid = React41.forwardRef(function Grid2({ children, className, columns = 1, gap = "md", ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
     "div",
     {
       ref,
@@ -763,8 +763,8 @@ var Grid = React8.forwardRef(function Grid2({ children, className, columns = 1, 
   );
 });
 Grid.displayName = "Grid";
-var Navbar = React8.forwardRef(function Navbar2({ className, style, ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(
+var Navbar = React41.forwardRef(function Navbar2({ className, style, ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
     "nav",
     {
       ref,
@@ -781,8 +781,8 @@ var Navbar = React8.forwardRef(function Navbar2({ className, style, ...rest }, r
   );
 });
 Navbar.displayName = "Navbar";
-var Footer = React8.forwardRef(function Footer2({ className, style, ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(
+var Footer = React41.forwardRef(function Footer2({ className, style, ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
     "footer",
     {
       ref,
@@ -799,9 +799,9 @@ var Footer = React8.forwardRef(function Footer2({ className, style, ...rest }, r
   );
 });
 Footer.displayName = "Footer";
-var Breadcrumb = React8.forwardRef(function Breadcrumb2({ className, style, items, ...rest }, ref) {
+var Breadcrumb = React41.forwardRef(function Breadcrumb2({ className, style, items, ...rest }, ref) {
   const currentIndex = Math.max(-1, ...items.map((it, idx) => it.isCurrent ? idx : -1));
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     "nav",
     {
       ref,
@@ -815,7 +815,7 @@ var Breadcrumb = React8.forwardRef(function Breadcrumb2({ className, style, item
       },
       ...rest
     },
-    /* @__PURE__ */ React8.createElement(
+    /* @__PURE__ */ React41.createElement(
       "ol",
       {
         style: {
@@ -829,7 +829,7 @@ var Breadcrumb = React8.forwardRef(function Breadcrumb2({ className, style, item
       },
       items.map((item, idx) => {
         const isCurrent = idx === currentIndex || item.isCurrent === true;
-        return /* @__PURE__ */ React8.createElement("li", { key: `${item.label}-${idx}`, "aria-current": isCurrent ? "page" : void 0 }, item.href && !isCurrent ? /* @__PURE__ */ React8.createElement(
+        return /* @__PURE__ */ React41.createElement("li", { key: `${item.label}-${idx}`, "aria-current": isCurrent ? "page" : void 0 }, item.href && !isCurrent ? /* @__PURE__ */ React41.createElement(
           "a",
           {
             href: item.href,
@@ -839,16 +839,16 @@ var Breadcrumb = React8.forwardRef(function Breadcrumb2({ className, style, item
             }
           },
           item.label
-        ) : /* @__PURE__ */ React8.createElement("span", { style: { color: isCurrent ? tokens.colors.text.primary : "inherit" } }, item.label), idx < items.length - 1 ? /* @__PURE__ */ React8.createElement("span", { "aria-hidden": "true", style: { padding: `0 ${tokens.spacing.xs}` } }, "/") : null);
+        ) : /* @__PURE__ */ React41.createElement("span", { style: { color: isCurrent ? tokens.colors.text.primary : "inherit" } }, item.label), idx < items.length - 1 ? /* @__PURE__ */ React41.createElement("span", { "aria-hidden": "true", style: { padding: `0 ${tokens.spacing.xs}` } }, "/") : null);
       })
     )
   );
 });
 Breadcrumb.displayName = "Breadcrumb";
-var Pagination = React8.forwardRef(function Pagination2({ className, style, currentPage, totalPages, onPrevious, onNext, ...rest }, ref) {
+var Pagination = React41.forwardRef(function Pagination2({ className, style, currentPage, totalPages, onPrevious, onNext, ...rest }, ref) {
   const canGoPrev = currentPage > 1;
   const canGoNext = currentPage < totalPages;
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     "nav",
     {
       ref,
@@ -862,7 +862,7 @@ var Pagination = React8.forwardRef(function Pagination2({ className, style, curr
       },
       ...rest
     },
-    /* @__PURE__ */ React8.createElement("div", { style: { display: "flex", alignItems: "center", gap: tokens.spacing.sm } }, /* @__PURE__ */ React8.createElement(
+    /* @__PURE__ */ React41.createElement("div", { style: { display: "flex", alignItems: "center", gap: tokens.spacing.sm } }, /* @__PURE__ */ React41.createElement(
       "button",
       {
         type: "button",
@@ -879,7 +879,7 @@ var Pagination = React8.forwardRef(function Pagination2({ className, style, curr
         }
       },
       "Previous"
-    ), /* @__PURE__ */ React8.createElement("div", { "aria-live": "polite", style: { fontWeight: tokens.typography.fontWeight.medium } }, "Page ", currentPage, " of ", totalPages), /* @__PURE__ */ React8.createElement(
+    ), /* @__PURE__ */ React41.createElement("div", { "aria-live": "polite", style: { fontWeight: tokens.typography.fontWeight.medium } }, "Page ", currentPage, " of ", totalPages), /* @__PURE__ */ React41.createElement(
       "button",
       {
         type: "button",
@@ -903,13 +903,13 @@ Pagination.displayName = "Pagination";
 function getFirstEnabledTabId(tabs) {
   return tabs.find((t) => !t.disabled)?.id ?? null;
 }
-var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, defaultValue, onValueChange, ...rest }, ref) {
+var Tabs = React41.forwardRef(function Tabs2({ className, style, tabs, value, defaultValue, onValueChange, ...rest }, ref) {
   const isControlled = value !== void 0;
-  const [uncontrolledValue, setUncontrolledValue] = React8.useState(() => {
+  const [uncontrolledValue, setUncontrolledValue] = React41.useState(() => {
     return defaultValue ?? getFirstEnabledTabId(tabs) ?? "";
   });
   const selectedValue = isControlled ? value : uncontrolledValue;
-  React8.useEffect(() => {
+  React41.useEffect(() => {
     if (!isControlled) {
       const exists = tabs.some((t) => t.id === selectedValue && !t.disabled);
       if (!exists) {
@@ -919,7 +919,7 @@ var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, def
       }
     }
   }, [tabs]);
-  const setSelected = React8.useCallback(
+  const setSelected = React41.useCallback(
     (nextId) => {
       if (isControlled) {
         onValueChange?.(nextId);
@@ -961,7 +961,7 @@ var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, def
       tabEl?.focus?.();
     }
   };
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     "div",
     {
       ref,
@@ -972,7 +972,7 @@ var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, def
       },
       ...rest
     },
-    /* @__PURE__ */ React8.createElement(
+    /* @__PURE__ */ React41.createElement(
       "div",
       {
         role: "tablist",
@@ -989,7 +989,7 @@ var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, def
         const isSelected = tab.id === selectedValue;
         const tabId = `ui-tab-${tab.id}`;
         const panelId = `ui-tabpanel-${tab.id}`;
-        return /* @__PURE__ */ React8.createElement(
+        return /* @__PURE__ */ React41.createElement(
           "button",
           {
             key: tab.id,
@@ -1021,7 +1021,7 @@ var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, def
       const isSelected = tab.id === selectedValue;
       const panelId = `ui-tabpanel-${tab.id}`;
       const tabId = `ui-tab-${tab.id}`;
-      return /* @__PURE__ */ React8.createElement(
+      return /* @__PURE__ */ React41.createElement(
         "div",
         {
           key: tab.id,
@@ -1039,8 +1039,8 @@ var Tabs = React8.forwardRef(function Tabs2({ className, style, tabs, value, def
   );
 });
 Tabs.displayName = "Tabs";
-var Card = React8.forwardRef(function Card2({ children, className, elevated, outlined, ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(
+var Card = React41.forwardRef(function Card2({ children, className, elevated, outlined, ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
     "div",
     {
       ref,
@@ -1086,10 +1086,10 @@ var getSizeTokens = (size) => {
       };
   }
 };
-var Badge = React8.forwardRef(function Badge2({ children, className, variant = "primary", size = "md", ...rest }, ref) {
+var Badge = React41.forwardRef(function Badge2({ children, className, variant = "primary", size = "md", ...rest }, ref) {
   const v = getVariantTokens(variant);
   const s = getSizeTokens(size);
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     "span",
     {
       ref,
@@ -1120,8 +1120,8 @@ var Badge = React8.forwardRef(function Badge2({ children, className, variant = "
   );
 });
 Badge.displayName = "Badge";
-var Divider = React8.forwardRef(function Divider2({ className, orientation = "horizontal", ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(
+var Divider = React41.forwardRef(function Divider2({ className, orientation = "horizontal", ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
     "hr",
     {
       ref,
@@ -1181,11 +1181,11 @@ function getHeadingTokens(as) {
       };
   }
 }
-var HeadingBase = React8.forwardRef(function HeadingBase2(props, ref) {
+var HeadingBase = React41.forwardRef(function HeadingBase2(props, ref) {
   const { as, children, className, ...rest } = props;
   const Element = as ?? "h2";
   const headingTokens = getHeadingTokens(Element);
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     Element,
     {
       ref,
@@ -1223,11 +1223,11 @@ function getTextTokens(as) {
       };
   }
 }
-var TextBase = React8.forwardRef(function TextBase2(props, ref) {
+var TextBase = React41.forwardRef(function TextBase2(props, ref) {
   const { as, children, className, ...rest } = props;
   const Element = as ?? "p";
   const textTokens = getTextTokens(Element);
-  return /* @__PURE__ */ React8.createElement(
+  return /* @__PURE__ */ React41.createElement(
     Element,
     {
       ref,
@@ -1246,36 +1246,364 @@ var TextBase = React8.forwardRef(function TextBase2(props, ref) {
 });
 TextBase.displayName = "Text";
 var Text = TextBase;
-var SectionHeading = React8.forwardRef(function SectionHeading2({ children, as = "h2", ...rest }, ref) {
-  return /* @__PURE__ */ React8.createElement(Heading, { as, ref, ...rest }, children);
+var SectionHeading = React41.forwardRef(function SectionHeading2({ children, as = "h2", ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(Heading, { as, ref, ...rest }, children);
 });
 SectionHeading.displayName = "SectionHeading";
 function Price(props) {
-  return /* @__PURE__ */ React8.createElement("span", null, props.value ?? "");
+  return /* @__PURE__ */ React41.createElement("span", null, props.value ?? "");
 }
 
 // src/components/commerce/PriceDisplay.tsx
 function PriceDisplay(props) {
-  return /* @__PURE__ */ React8.createElement(Price, { value: props.value });
+  return /* @__PURE__ */ React41.createElement(Price, { value: props.value });
 }
-var StockBadge = React8.forwardRef(function StockBadge2({ label = "In stock", variant = "success" }, ref) {
-  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant }, label);
+var StockBadge = React41.forwardRef(function StockBadge2({ label = "In stock", variant = "success" }, ref) {
+  return /* @__PURE__ */ React41.createElement(Badge, { ref, variant }, label);
 });
 StockBadge.displayName = "StockBadge";
-var BrandBadge = React8.forwardRef(function BrandBadge2({ brand }, ref) {
-  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant: "secondary" }, brand ?? "");
+var BrandBadge = React41.forwardRef(function BrandBadge2({ brand }, ref) {
+  return /* @__PURE__ */ React41.createElement(Badge, { ref, variant: "secondary" }, brand ?? "");
 });
 BrandBadge.displayName = "BrandBadge";
-var CompatibilityBadge = React8.forwardRef(function CompatibilityBadge2({ label = "Compatible" }, ref) {
-  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant: "primary" }, label);
+var CompatibilityBadge = React41.forwardRef(function CompatibilityBadge2({ label = "Compatible" }, ref) {
+  return /* @__PURE__ */ React41.createElement(Badge, { ref, variant: "primary" }, label);
 });
 CompatibilityBadge.displayName = "CompatibilityBadge";
-var Rating = React8.forwardRef(function Rating2({ value, variant = "warning", className }, ref) {
-  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant, className: cn(className) }, value ?? "");
+var Rating = React41.forwardRef(function Rating2({ value, variant = "warning", className }, ref) {
+  return /* @__PURE__ */ React41.createElement(Badge, { ref, variant, className: cn(className) }, value ?? "");
 });
 Rating.displayName = "Rating";
 function VehicleCard(props) {
-  return /* @__PURE__ */ React8.createElement("div", null, props.children);
+  return /* @__PURE__ */ React41.createElement("div", null, props.children);
+}
+function WishlistButton({
+  className,
+  children,
+  disabled,
+  loading,
+  type,
+  "aria-label": ariaLabel,
+  ...rest
+}) {
+  return /* @__PURE__ */ React41.createElement(
+    IconButton,
+    {
+      ...rest,
+      type,
+      disabled,
+      loading,
+      className: cn("ui-commerce-wishlist-button", className),
+      "aria-label": ariaLabel ?? "Add to wishlist"
+    },
+    children ?? /* @__PURE__ */ React41.createElement(
+      "span",
+      {
+        "aria-hidden": "true",
+        style: { display: "inline-flex", alignItems: "center", gap: "0.5rem" }
+      },
+      /* @__PURE__ */ React41.createElement("span", { style: { lineHeight: 1 } }, "\u2661"),
+      /* @__PURE__ */ React41.createElement("span", { style: { fontSize: "0.875rem", fontWeight: 600 } }, "Wishlist")
+    )
+  );
+}
+function AddToCartButton({
+  className,
+  children,
+  disabled,
+  loading,
+  type,
+  ...rest
+}) {
+  return /* @__PURE__ */ React41.createElement(
+    PrimaryButton,
+    {
+      ...rest,
+      type,
+      disabled,
+      loading,
+      className: cn("ui-commerce-add-to-cart-button", className)
+    },
+    children ?? "Add to cart"
+  );
+}
+function ProductActions({
+  className,
+  wishlistAriaLabel,
+  addToCartChildren,
+  addToCartDisabled
+}) {
+  return /* @__PURE__ */ React41.createElement(Stack, { className, direction: "horizontal", gap: "md", align: "center" }, /* @__PURE__ */ React41.createElement(WishlistButton, { "aria-label": wishlistAriaLabel ?? "Add to wishlist" }), /* @__PURE__ */ React41.createElement(AddToCartButton, { disabled: addToCartDisabled }, addToCartChildren ?? "Add to cart"));
+}
+function VehicleSpecs({ className }) {
+  return /* @__PURE__ */ React41.createElement(Stack, { className, gap: "xs", direction: "vertical" }, /* @__PURE__ */ React41.createElement(Text, { as: "p", style: { margin: 0 } }, "Vehicle specs"), /* @__PURE__ */ React41.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.85 } }, "Placeholder details (Phase 2):"), /* @__PURE__ */ React41.createElement(Stack, { gap: "xs", direction: "vertical" }, /* @__PURE__ */ React41.createElement(Text, { as: "small", style: { margin: 0 } }, "\u2022 Engine: \u2014"), /* @__PURE__ */ React41.createElement(Text, { as: "small", style: { margin: 0 } }, "\u2022 Transmission: \u2014"), /* @__PURE__ */ React41.createElement(Text, { as: "small", style: { margin: 0 } }, "\u2022 Drive: \u2014")));
+}
+var EmptyState = React41.forwardRef(function EmptyState2({ className, style, title, description, icon, action, ...rest }, ref) {
+  return /* @__PURE__ */ React41.createElement(
+    "div",
+    {
+      ref,
+      className: cn("ui-empty-state", className),
+      style: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        textAlign: "center",
+        padding: tokens.spacing.xl,
+        gap: tokens.spacing.md,
+        fontFamily: tokens.typography.fontFamily.sans,
+        color: tokens.colors.text.primary,
+        ...style
+      },
+      ...rest
+    },
+    icon ? /* @__PURE__ */ React41.createElement("div", { "aria-hidden": "true", style: { display: "flex", justifyContent: "center" } }, icon) : null,
+    /* @__PURE__ */ React41.createElement(
+      "h2",
+      {
+        style: {
+          fontSize: tokens.typography.fontSize["2xl"],
+          fontWeight: tokens.typography.fontWeight.semibold,
+          lineHeight: tokens.typography.lineHeight.normal,
+          margin: 0
+        }
+      },
+      title
+    ),
+    description ? /* @__PURE__ */ React41.createElement(
+      "p",
+      {
+        style: {
+          margin: 0,
+          maxWidth: "48rem",
+          color: tokens.colors.text.secondary,
+          fontSize: tokens.typography.fontSize.md,
+          lineHeight: tokens.typography.lineHeight.normal
+        }
+      },
+      description
+    ) : null,
+    action ? /* @__PURE__ */ React41.createElement(
+      "div",
+      {
+        style: {
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          marginTop: tokens.spacing.lg
+        }
+      },
+      action
+    ) : null
+  );
+});
+EmptyState.displayName = "EmptyState";
+
+// src/components/commerce/EmptyProductState.tsx
+function EmptyProductState({ className, ...rest }) {
+  return /* @__PURE__ */ React41.createElement(
+    EmptyState,
+    {
+      ...rest,
+      className,
+      title: "No products found",
+      description: "Try adjusting your filters or search criteria."
+    }
+  );
+}
+function ImageGallery({ className, images, height = 240 }) {
+  return /* @__PURE__ */ React41.createElement(Card, { className: cn("ui-commerce-image-gallery", className), outlined: true }, /* @__PURE__ */ React41.createElement(
+    "div",
+    {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(1, minmax(0, 1fr))",
+        gap: tokens.spacing.sm
+      }
+    },
+    images.map((img) => /* @__PURE__ */ React41.createElement(
+      "div",
+      {
+        key: img.id,
+        "aria-label": img.alt ?? "Product image",
+        style: {
+          width: "100%",
+          height,
+          borderRadius: tokens.radius.sm,
+          backgroundColor: tokens.colors.surface.muted,
+          border: `1px solid ${tokens.colors.border.base}`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden"
+        }
+      },
+      img.src ? /* @__PURE__ */ React41.createElement(
+        "img",
+        {
+          src: img.src,
+          alt: img.alt ?? "Product image",
+          style: {
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.25
+          }
+        }
+      ) : null,
+      /* @__PURE__ */ React41.createElement(
+        "span",
+        {
+          style: {
+            fontFamily: tokens.typography.fontFamily.sans,
+            fontSize: tokens.typography.fontSize.sm,
+            fontWeight: tokens.typography.fontWeight.semibold,
+            opacity: 0.8,
+            position: "absolute",
+            padding: tokens.spacing.sm,
+            textAlign: "center"
+          }
+        },
+        "Image placeholder"
+      )
+    ))
+  ));
+}
+function ProductGallery({ className, images, thumbnails, height }) {
+  return /* @__PURE__ */ React41.createElement(Stack, { className: cn("ui-commerce-product-gallery", className), direction: "vertical", gap: "md" }, thumbnails?.length ? /* @__PURE__ */ React41.createElement(Card, { outlined: true }, /* @__PURE__ */ React41.createElement(
+    "div",
+    {
+      style: {
+        display: "grid",
+        gridTemplateColumns: `repeat(${Math.min(thumbnails.length, 6)}, minmax(0, 1fr))`,
+        gap: tokens.spacing.sm
+      }
+    },
+    thumbnails.map((thumb) => /* @__PURE__ */ React41.createElement(
+      "div",
+      {
+        key: thumb.id,
+        "aria-label": thumb.alt ?? "Thumbnail placeholder",
+        style: {
+          width: "100%",
+          aspectRatio: "1 / 1",
+          borderRadius: tokens.radius.sm,
+          backgroundColor: tokens.colors.surface.muted,
+          border: `1px solid ${tokens.colors.border.base}`,
+          overflow: "hidden",
+          position: "relative"
+        }
+      },
+      thumb.src ? /* @__PURE__ */ React41.createElement(
+        "img",
+        {
+          src: thumb.src,
+          alt: thumb.alt ?? "Thumbnail placeholder",
+          style: {
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.22
+          }
+        }
+      ) : null
+    ))
+  )) : null, /* @__PURE__ */ React41.createElement(ImageGallery, { images, height }));
+}
+function ProductCard({
+  className,
+  title,
+  description,
+  brand,
+  price,
+  ratingValue,
+  stockLabel,
+  compatibleLabel,
+  images,
+  thumbnails,
+  wishlistAriaLabel,
+  addToCartChildren,
+  addToCartDisabled
+}) {
+  return /* @__PURE__ */ React41.createElement(Card, { className: cn("ui-commerce-product-card", className), elevated: true }, /* @__PURE__ */ React41.createElement(Stack, { direction: "vertical", gap: "md" }, /* @__PURE__ */ React41.createElement(ProductGallery, { images, thumbnails, height: 220 }), /* @__PURE__ */ React41.createElement(Stack, { direction: "vertical", gap: "sm" }, /* @__PURE__ */ React41.createElement(Heading, { as: "h3", className: "ui-commerce-product-title" }, title ?? ""), brand ? /* @__PURE__ */ React41.createElement(BrandBadge, { brand }) : null, description ? /* @__PURE__ */ React41.createElement(Text, { as: "p", style: { margin: 0, opacity: 0.85 } }, description) : null, /* @__PURE__ */ React41.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", justify: "space-between" }, /* @__PURE__ */ React41.createElement(PriceDisplay, { value: price }), /* @__PURE__ */ React41.createElement(Rating, { value: ratingValue })), /* @__PURE__ */ React41.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", wrap: true }, /* @__PURE__ */ React41.createElement(StockBadge, { label: stockLabel }), /* @__PURE__ */ React41.createElement(CompatibilityBadge, { label: compatibleLabel }))), /* @__PURE__ */ React41.createElement(Divider, { orientation: "horizontal" }), /* @__PURE__ */ React41.createElement(
+    ProductActions,
+    {
+      wishlistAriaLabel,
+      addToCartChildren,
+      addToCartDisabled
+    }
+  ), /* @__PURE__ */ React41.createElement("div", { style: { height: 0 } })));
+}
+function CategoryCard({ className, title, description, ctaLabel }) {
+  return /* @__PURE__ */ React41.createElement(Card, { className: cn("ui-commerce-category-card", className), outlined: true }, /* @__PURE__ */ React41.createElement(Stack, { direction: "vertical", gap: "md" }, /* @__PURE__ */ React41.createElement(
+    "div",
+    {
+      "aria-label": "Category image placeholder",
+      style: {
+        width: "100%",
+        aspectRatio: "16 / 10",
+        borderRadius: tokens.radius.sm,
+        backgroundColor: tokens.colors.surface.muted,
+        border: `1px solid ${tokens.colors.border.base}`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden"
+      }
+    },
+    /* @__PURE__ */ React41.createElement(
+      "span",
+      {
+        style: {
+          fontFamily: tokens.typography.fontFamily.sans,
+          fontSize: tokens.typography.fontSize.sm,
+          fontWeight: tokens.typography.fontWeight.semibold,
+          opacity: 0.8
+        }
+      },
+      "Category placeholder"
+    )
+  ), /* @__PURE__ */ React41.createElement(Stack, { direction: "vertical", gap: "sm" }, /* @__PURE__ */ React41.createElement(Heading, { as: "h3" }, title ?? ""), description ? /* @__PURE__ */ React41.createElement(Text, { as: "p", style: { margin: 0, opacity: 0.85 } }, description) : null), /* @__PURE__ */ React41.createElement(
+    "div",
+    {
+      "aria-label": "Category CTA placeholder",
+      style: {
+        width: "100%",
+        borderRadius: tokens.radius.sm,
+        border: `1px dashed ${tokens.colors.border.base}`,
+        padding: tokens.spacing.md,
+        textAlign: "center"
+      }
+    },
+    /* @__PURE__ */ React41.createElement(Text, { as: "span", style: { margin: 0, opacity: 0.9 } }, ctaLabel ?? "View category")
+  )));
+}
+function ProductListItem({
+  className,
+  title,
+  description,
+  brand,
+  price,
+  ratingValue,
+  stockLabel,
+  compatibleLabel,
+  images,
+  wishlistAriaLabel,
+  addToCartChildren,
+  addToCartDisabled
+}) {
+  return /* @__PURE__ */ React41.createElement(Card, { className: cn("ui-commerce-product-list-item", className), outlined: true }, /* @__PURE__ */ React41.createElement(Stack, { direction: "horizontal", gap: "md", align: "flex-start", wrap: false }, /* @__PURE__ */ React41.createElement("div", { style: { width: 140 } }, /* @__PURE__ */ React41.createElement(ImageGallery, { images: images.slice(0, 1), height: 100 })), /* @__PURE__ */ React41.createElement(Stack, { direction: "vertical", gap: "sm", style: { flex: 1 } }, /* @__PURE__ */ React41.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", justify: "space-between", wrap: true }, /* @__PURE__ */ React41.createElement(Heading, { as: "h3" }, title ?? "")), brand ? /* @__PURE__ */ React41.createElement(BrandBadge, { brand }) : null, description ? /* @__PURE__ */ React41.createElement(Text, { as: "p", style: { margin: 0, opacity: 0.85 } }, description) : null, /* @__PURE__ */ React41.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", justify: "space-between" }, /* @__PURE__ */ React41.createElement(PriceDisplay, { value: price }), /* @__PURE__ */ React41.createElement(Rating, { value: ratingValue })), /* @__PURE__ */ React41.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", wrap: true }, /* @__PURE__ */ React41.createElement(StockBadge, { label: stockLabel }), /* @__PURE__ */ React41.createElement(CompatibilityBadge, { label: compatibleLabel })), /* @__PURE__ */ React41.createElement("div", { style: { height: tokens.spacing.sm } }), /* @__PURE__ */ React41.createElement(
+    ProductActions,
+    {
+      wishlistAriaLabel,
+      addToCartChildren,
+      addToCartDisabled
+    }
+  ))));
+}
+function ProductGrid({ className, columns = 3, children }) {
+  return /* @__PURE__ */ React41.createElement(Grid, { className: cn("ui-commerce-product-grid", className), columns, gap: "lg" }, children);
 }
 
-export { Badge, BrandBadge, Breadcrumb, ButtonBase, Card, Checkbox, CompatibilityBadge, Container, Divider, Footer, Grid, Heading, IconButton, Input, Navbar, Pagination, Price, PriceDisplay, PrimaryButton, Rating, SecondaryButton, Section, SectionHeading, Select, Stack, StockBadge, Tabs, Text, TextArea, VehicleCard, animations, breakpoints, cn, colors, composeEventHandlers, isBrowser, mergeRefs, noop, radius, shadows, spacing, tokens, typography, zIndex };
+export { AddToCartButton, Badge, BrandBadge, Breadcrumb, ButtonBase, Card, CategoryCard, Checkbox, CompatibilityBadge, Container, Divider, EmptyProductState, Footer, Grid, Heading, IconButton, ImageGallery, Input, Navbar, Pagination, Price, PriceDisplay, PrimaryButton, ProductActions, ProductCard, ProductGallery, ProductGrid, ProductListItem, Rating, SecondaryButton, Section, SectionHeading, Select, Stack, StockBadge, Tabs, Text, TextArea, VehicleCard, VehicleSpecs, WishlistButton, animations, breakpoints, cn, colors, composeEventHandlers, isBrowser, mergeRefs, noop, radius, shadows, spacing, tokens, typography, zIndex };
