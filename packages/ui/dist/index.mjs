@@ -1246,11 +1246,36 @@ var TextBase = React8.forwardRef(function TextBase2(props, ref) {
 });
 TextBase.displayName = "Text";
 var Text = TextBase;
-function VehicleCard(props) {
-  return /* @__PURE__ */ React8.createElement("div", null, props.children);
-}
+var SectionHeading = React8.forwardRef(function SectionHeading2({ children, as = "h2", ...rest }, ref) {
+  return /* @__PURE__ */ React8.createElement(Heading, { as, ref, ...rest }, children);
+});
+SectionHeading.displayName = "SectionHeading";
 function Price(props) {
   return /* @__PURE__ */ React8.createElement("span", null, props.value ?? "");
 }
 
-export { Badge, Breadcrumb, ButtonBase, Card, Checkbox, Container, Divider, Footer, Grid, Heading, IconButton, Input, Navbar, Pagination, Price, PrimaryButton, SecondaryButton, Section, Select, Stack, Tabs, Text, TextArea, VehicleCard, animations, breakpoints, cn, colors, composeEventHandlers, isBrowser, mergeRefs, noop, radius, shadows, spacing, tokens, typography, zIndex };
+// src/components/commerce/PriceDisplay.tsx
+function PriceDisplay(props) {
+  return /* @__PURE__ */ React8.createElement(Price, { value: props.value });
+}
+var StockBadge = React8.forwardRef(function StockBadge2({ label = "In stock", variant = "success" }, ref) {
+  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant }, label);
+});
+StockBadge.displayName = "StockBadge";
+var BrandBadge = React8.forwardRef(function BrandBadge2({ brand }, ref) {
+  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant: "secondary" }, brand ?? "");
+});
+BrandBadge.displayName = "BrandBadge";
+var CompatibilityBadge = React8.forwardRef(function CompatibilityBadge2({ label = "Compatible" }, ref) {
+  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant: "primary" }, label);
+});
+CompatibilityBadge.displayName = "CompatibilityBadge";
+var Rating = React8.forwardRef(function Rating2({ value, variant = "warning", className }, ref) {
+  return /* @__PURE__ */ React8.createElement(Badge, { ref, variant, className: cn(className) }, value ?? "");
+});
+Rating.displayName = "Rating";
+function VehicleCard(props) {
+  return /* @__PURE__ */ React8.createElement("div", null, props.children);
+}
+
+export { Badge, BrandBadge, Breadcrumb, ButtonBase, Card, Checkbox, CompatibilityBadge, Container, Divider, Footer, Grid, Heading, IconButton, Input, Navbar, Pagination, Price, PriceDisplay, PrimaryButton, Rating, SecondaryButton, Section, SectionHeading, Select, Stack, StockBadge, Tabs, Text, TextArea, VehicleCard, animations, breakpoints, cn, colors, composeEventHandlers, isBrowser, mergeRefs, noop, radius, shadows, spacing, tokens, typography, zIndex };
