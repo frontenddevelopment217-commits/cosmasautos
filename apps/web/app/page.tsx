@@ -6,7 +6,6 @@ import {
   FeaturedProductsSection,
   FooterCTA,
   HeroSection,
-  NewsletterCTA,
   PromotionalBanner,
   WhyChooseUsSection,
 } from '../src/components/homepage';
