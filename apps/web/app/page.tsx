@@ -20,7 +20,6 @@ export default function Page() {
       <PromotionalBanner />
       <WhyChooseUsSection />
       <BrandLogos />
-      <NewsletterCTA />
       <FooterCTA />
     </>
   );
