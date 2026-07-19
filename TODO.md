@@ -1,10 +1,8 @@
-# TODO
-
-- [x] Inspect existing homepage components for React.forwardRef/ref usage.
-- [x] Convert all 8 homepage components to normal named function components.
-- [ ] Fix TypeScript syntax/indentation issues introduced during the refactor (HeroSection, NewsletterCTA, FooterCTA at minimum).
-- [ ] Re-run pnpm @cosmas/ui build.
-- [ ] Re-run pnpm @cosmas/ui typecheck.
-- [ ] Re-run pnpm @cosmas/web build.
-- [ ] Ensure runtime “Refs cannot be used in Server Components” error is resolved.
-
+- [ ] Inspect existing homepage components and vehicle card/image implementations
+- [ ] Fix hero banner: Next.js Image, responsive full-width, 70–80vh, dark overlay, fallback image
+- [ ] Remove all “Image placeholder” elements from homepage
+- [ ] Ensure featured vehicle cards use real images from /public/images/vehicles
+- [ ] Only use /images/placeholders/car-placeholder.png when referenced file is missing
+- [ ] Redesign featured vehicle cards: responsive grids (4/5/2/1), premium spacing/typography, hover shadow + lift + smooth transition, image top with aspect-[4/3]
+- [ ] Ensure every section is responsive
+- [ ] Run `pnpm lint`, `pnpm typecheck`, `pnpm build` and fix all issues

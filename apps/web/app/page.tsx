@@ -1,13 +1,14 @@
 import * as React from 'react';
 
 import {
-  BrandLogos,
+
   FeaturedCategoriesSection,
   FeaturedProductsSection,
   FooterCTA,
   HeroSection,
   PromotionalBanner,
   WhyChooseUsSection,
+  BrowseByBrand,
 } from '../src/components/homepage';
 
 export default function Page() {
@@ -18,7 +19,7 @@ export default function Page() {
       <FeaturedProductsSection />
       <PromotionalBanner />
       <WhyChooseUsSection />
-      <BrandLogos />
+      <BrowseByBrand />
       <FooterCTA />
     </>
   );

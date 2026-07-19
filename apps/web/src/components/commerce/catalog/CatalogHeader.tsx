@@ -24,7 +24,7 @@ export function CatalogHeader({
         <Stack direction="vertical" gap="sm">
           <SectionHeading title={title} />
           <p style={{ margin: 0, opacity: 0.85 }}>
-            {description} <span style={{ fontWeight: 600 }}>{productCount} items</span>.
+            {description} <span style={{ fontWeight: 700 }}>{productCount} items</span>.
           </p>
         </Stack>
       </Stack>

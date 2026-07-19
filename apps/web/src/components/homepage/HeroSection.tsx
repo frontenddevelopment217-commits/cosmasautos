@@ -1,58 +1,75 @@
 import * as React from 'react';
 
-import { Card, Container, Heading, Input, PrimaryButton, SecondaryButton, Text } from '@cosmas/ui';
-import { Grid } from '@cosmas/ui';
-import { Stack } from '@cosmas/ui';
-import { Section } from '@cosmas/ui';
-import { cn } from '@cosmas/ui';
+import Image from 'next/image';
 
-/**
- * HeroSection
- *
- * First fold homepage introduction.
- */
+import { cn } from '@cosmas/ui';
+import { Container, PrimaryButton, SecondaryButton, Section } from '@cosmas/ui';
+
 export interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const HeroSection = function HeroSection({ className, ...props }: HeroSectionProps) {
+export function HeroSection({ className, ...props }: HeroSectionProps) {
   return (
-    <Section as="section" spacing="lg" className={cn(className)}>
-      <Container size="xl">
-        <div {...props}>
-          <Stack direction="vertical" gap="lg" align="stretch">
-            <Stack direction="vertical" gap="sm">
-              <Heading as="h1">Find Your Next Vehicle with Confidence</Heading>
-              <Text as="p">
-                Explore curated featured listings, discover categories, and get updates straight to
-                your inbox.
-              </Text>
-            </Stack>
+    <Section as="section" className={cn(className)}>
+      <div className="relative min-h-[90vh] overflow-hidden bg-[#0D0D0F]">
+        {/* Background Logo */}
+        <Image
+          src="/images/hero/hero-banner.jpg"
+          alt="Cosmas Autos"
+          fill
+          priority
+          sizes="100vw"
+          className="object-contain object-right opacity-65 scale-110"
+        />
 
-            <Stack direction="horizontal" gap="sm" wrap>
-              <PrimaryButton>Explore Featured</PrimaryButton>
-              <SecondaryButton>Browse Categories</SecondaryButton>
-            </Stack>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/35" />
 
-            <Grid columns={3} gap="md">
-              {(
-                [
-                  'Trusted sourcing',
-                  'Transparent info',
-                  'Fast discovery',
-                  'Quality checks',
-                  'Clear pricing',
-                  'Simple steps',
-                ] as const
-              ).map((label) => (
-                <Card key={label} outlined>
-                  <Text as="p" className="">
-                    {label}
-                  </Text>
-                </Card>
-              ))}
-            </Grid>
-          </Stack>
+        {/* Content */}
+        <div className="relative z-10">
+          <Container size="xl">
+            <div {...props} className="flex min-h-[90vh] flex-col justify-between">
+              {/* Hero Content */}
+              <div className="pt-28 lg:pt-36">
+                <div className="max-w-xl">
+                  <span className="font-[IBM_Plex_Mono,monospace] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#FF3B4E]">
+                    — Est. in Abuja, Nigeria
+                  </span>
+
+                  <h1 className="mt-6 mb-12 font-[Fraunces,serif] text-[2.8rem] font-medium leading-[1.03] text-white sm:text-6xl lg:text-7xl">
+                    Buy new and Tokunbo vehicles with{' '}
+                    <span className="border-b-2 border-[#C8102E] pb-1">real confidence</span>
+                  </h1>
+
+                  <p className="mb-12 max-w-lg text-base leading-8 text-white/75 sm:text-lg">
+                    Brand new, Tokunbo, and Nigerian used vehicles, sourced with verified history,
+                    professional inspection, and nationwide delivery.
+                  </p>
+
+                  <div className="flex flex-wrap gap-4">
+                    <PrimaryButton className="!rounded-sm !bg-[#C8102E] !px-8 !py-3.5 !text-xs !font-semibold !uppercase !tracking-[0.12em] hover:!bg-[#9F1028]">
+                      Browse Inventory
+                    </PrimaryButton>
+
+                    <SecondaryButton className="!rounded-sm !border !border-white/30 !bg-transparent !px-8 !py-3.5 !text-xs !font-semibold !uppercase !tracking-[0.12em] !text-white hover:!border-white">
+                      Request a Vehicle
+                    </SecondaryButton>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Feature Bar */}
+              <div className="border-t border-white/10 bg-black/55 backdrop-blur-sm">
+                <div className="grid grid-cols-2 gap-4 py-5 font-[IBM_Plex_Mono,monospace] text-[11px] uppercase tracking-[0.15em] text-white/70 sm:grid-cols-4">
+                  <span>New · Tokunbo · Used</span>
+                  <span className="hidden sm:block">Verified Vehicle History</span>
+                  <span className="hidden sm:block">Professional Inspection</span>
+                  <span>Nationwide Delivery</span>
+                </div>
+              </div>
+            </div>
+          </Container>
         </div>
-      </Container>
+      </div>
     </Section>
   );
-};
+}
