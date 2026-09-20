@@ -19,7 +19,7 @@ export function ProductResults({ products }: ProductResultsProps) {
 
   return (
     <Stack direction="vertical" gap="lg" style={{ width: '100%' }}>
-      <ProductGrid columns={3}>
+      <ProductGrid>
         {products.map((p) => (
           <ProductCard
             key={p.id}

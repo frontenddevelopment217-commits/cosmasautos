@@ -746,7 +746,7 @@ var gapByToken2 = {
   lg: tokens.spacing.lg,
   xl: tokens.spacing.xl
 };
-var Grid = React39.forwardRef(function Grid2({ children, className, columns = 1, gap = "md", ...rest }, ref) {
+var Grid = React39.forwardRef(function Grid2({ children, className, columns = 1, gap = "md", responsive, minItemWidth = 260, ...rest }, ref) {
   return /* @__PURE__ */ React39.createElement(
     "div",
     {
@@ -754,7 +754,7 @@ var Grid = React39.forwardRef(function Grid2({ children, className, columns = 1,
       className: cn("ui-grid", className),
       style: {
         display: "grid",
-        gridTemplateColumns: `repeat(${columns},minmax(0,1fr))`,
+        gridTemplateColumns: responsive ? `repeat(auto-fit, minmax(min(${minItemWidth}px, 100%), 1fr))` : `repeat(${columns},minmax(0,1fr))`,
         gap: gapByToken2[gap]
       },
       ...rest
@@ -1673,8 +1673,17 @@ function ProductListItem({
     }
   ))));
 }
-function ProductGrid({ className, columns = 3, children }) {
-  return /* @__PURE__ */ React39.createElement(Grid, { className: cn("ui-commerce-product-grid", className), columns, gap: "lg" }, children);
+function ProductGrid({ className, children }) {
+  return /* @__PURE__ */ React39.createElement(
+    Grid,
+    {
+      className: cn("ui-commerce-product-grid", className),
+      responsive: true,
+      minItemWidth: 280,
+      gap: "lg"
+    },
+    children
+  );
 }
 
 export { AddToCartButton, Badge, BrandBadge, Breadcrumb, ButtonBase, Card, CategoryCard, Checkbox, CompatibilityBadge, Container, Divider, EmptyProductState, Footer, Grid, Heading, IconButton, ImageGallery, Input, Navbar, Pagination, Price, PriceDisplay, PrimaryButton, ProductActions, ProductCard, ProductGallery, ProductGrid, ProductListItem, Rating, SecondaryButton, Section, SectionHeading, Select, Stack, StockBadge, Tabs, Text, TextArea, VehicleCard, VehicleSpecs, WishlistButton, animations, breakpoints, cn, colors, composeEventHandlers, isBrowser, mergeRefs, noop, radius, shadows, spacing, tokens, typography, zIndex };
