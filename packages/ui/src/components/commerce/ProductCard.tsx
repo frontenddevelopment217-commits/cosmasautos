@@ -78,7 +78,7 @@ export function ProductCard({
         {/* Image + badges */}
         <Stack direction="vertical" gap="sm">
           <div style={{ position: 'relative' }}>
-            <ProductGallery images={images} thumbnails={thumbnails} height={220} />
+            <ProductGallery images={images} thumbnails={thumbnails} height={160} />
 
             <Stack
               direction="horizontal"
@@ -183,8 +183,8 @@ export function ProductCard({
 
         <Divider orientation="horizontal" />
 
-        {/* Actions row: View Details (visual) + existing commerce actions */}
-        <Stack direction="horizontal" gap="md" align="center" justify="space-between" wrap>
+        {/* Actions: View Details on its own row, wishlist + add-to-cart on the next */}
+        <Stack direction="vertical" gap="sm" align="stretch">
           <div
             aria-label="View details"
             style={{
@@ -197,6 +197,7 @@ export function ProductCard({
               opacity: 0.95,
               backgroundColor: tokens.colors.surface.base,
               userSelect: 'none',
+              textAlign: 'center',
             }}
           >
             {viewDetailsLabel}

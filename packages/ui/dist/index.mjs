@@ -1333,7 +1333,19 @@ function ProductActions({
   addToCartChildren,
   addToCartDisabled
 }) {
-  return /* @__PURE__ */ React39.createElement(Stack, { className, direction: "horizontal", gap: "md", align: "center" }, /* @__PURE__ */ React39.createElement(WishlistButton, { "aria-label": wishlistAriaLabel ?? "Add to wishlist" }), /* @__PURE__ */ React39.createElement(AddToCartButton, { disabled: addToCartDisabled }, addToCartChildren ?? "Add to cart"));
+  return /* @__PURE__ */ React39.createElement(
+    Stack,
+    {
+      className,
+      direction: "horizontal",
+      gap: "md",
+      align: "center",
+      wrap: true,
+      style: { width: "100%" }
+    },
+    /* @__PURE__ */ React39.createElement(WishlistButton, { "aria-label": wishlistAriaLabel ?? "Add to wishlist" }),
+    /* @__PURE__ */ React39.createElement(AddToCartButton, { disabled: addToCartDisabled }, addToCartChildren ?? "Add to cart")
+  );
 }
 function VehicleSpecs({ className }) {
   return /* @__PURE__ */ React39.createElement(Stack, { className, gap: "xs", direction: "vertical" }, /* @__PURE__ */ React39.createElement(Text, { as: "p", style: { margin: 0 } }, "Vehicle specs"), /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.85 } }, "Placeholder details (Phase 2):"), /* @__PURE__ */ React39.createElement(Stack, { gap: "xs", direction: "vertical" }, /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0 } }, "\u2022 Engine: \u2014"), /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0 } }, "\u2022 Transmission: \u2014"), /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0 } }, "\u2022 Drive: \u2014")));
@@ -1533,7 +1545,7 @@ function ProductCard({
   addToCartDisabled,
   viewDetailsLabel = "View Details"
 }) {
-  return /* @__PURE__ */ React39.createElement(Card, { className: cn("ui-commerce-product-card", className), elevated: true }, /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "md" }, /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "sm" }, /* @__PURE__ */ React39.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ React39.createElement(ProductGallery, { images, thumbnails, height: 220 }), /* @__PURE__ */ React39.createElement(
+  return /* @__PURE__ */ React39.createElement(Card, { className: cn("ui-commerce-product-card", className), elevated: true }, /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "md" }, /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "sm" }, /* @__PURE__ */ React39.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ React39.createElement(ProductGallery, { images, thumbnails, height: 160 }), /* @__PURE__ */ React39.createElement(
     Stack,
     {
       direction: "horizontal",
@@ -1569,7 +1581,7 @@ function ProductCard({
       },
       conditionBadgeLabel
     ) : null
-  ))), /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "sm" }, /* @__PURE__ */ React39.createElement(Heading, { as: "h3", className: "ui-commerce-product-title" }, title ?? ""), brand ? /* @__PURE__ */ React39.createElement(BrandBadge, { brand }) : null, description ? /* @__PURE__ */ React39.createElement(Text, { as: "p", style: { margin: 0, opacity: 0.85 } }, description) : null, /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", justify: "space-between", wrap: true }, /* @__PURE__ */ React39.createElement(PriceDisplay, { value: price }), /* @__PURE__ */ React39.createElement(Rating, { value: ratingValue })), /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", wrap: true }, /* @__PURE__ */ React39.createElement(StockBadge, { label: stockLabel }), /* @__PURE__ */ React39.createElement(CompatibilityBadge, { label: compatibleLabel })), /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "xs", style: { padding: tokens.spacing.sm } }, /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "md", align: "center", wrap: true }, year ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Year:"), " ", year) : null, mileage ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Mileage:"), " ", mileage) : null), /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "md", align: "center", wrap: true }, transmission ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Transmission:"), " ", transmission) : null, fuelType ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Fuel:"), " ", fuelType) : null), location ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Location:"), " ", location) : null)), /* @__PURE__ */ React39.createElement(Divider, { orientation: "horizontal" }), /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "md", align: "center", justify: "space-between", wrap: true }, /* @__PURE__ */ React39.createElement(
+  ))), /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "sm" }, /* @__PURE__ */ React39.createElement(Heading, { as: "h3", className: "ui-commerce-product-title" }, title ?? ""), brand ? /* @__PURE__ */ React39.createElement(BrandBadge, { brand }) : null, description ? /* @__PURE__ */ React39.createElement(Text, { as: "p", style: { margin: 0, opacity: 0.85 } }, description) : null, /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", justify: "space-between", wrap: true }, /* @__PURE__ */ React39.createElement(PriceDisplay, { value: price }), /* @__PURE__ */ React39.createElement(Rating, { value: ratingValue })), /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "sm", align: "center", wrap: true }, /* @__PURE__ */ React39.createElement(StockBadge, { label: stockLabel }), /* @__PURE__ */ React39.createElement(CompatibilityBadge, { label: compatibleLabel })), /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "xs", style: { padding: tokens.spacing.sm } }, /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "md", align: "center", wrap: true }, year ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Year:"), " ", year) : null, mileage ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Mileage:"), " ", mileage) : null), /* @__PURE__ */ React39.createElement(Stack, { direction: "horizontal", gap: "md", align: "center", wrap: true }, transmission ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Transmission:"), " ", transmission) : null, fuelType ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Fuel:"), " ", fuelType) : null), location ? /* @__PURE__ */ React39.createElement(Text, { as: "small", style: { margin: 0, opacity: 0.9 } }, /* @__PURE__ */ React39.createElement("b", { style: { fontWeight: tokens.typography.fontWeight.bold } }, "Location:"), " ", location) : null)), /* @__PURE__ */ React39.createElement(Divider, { orientation: "horizontal" }), /* @__PURE__ */ React39.createElement(Stack, { direction: "vertical", gap: "sm", align: "stretch" }, /* @__PURE__ */ React39.createElement(
     "div",
     {
       "aria-label": "View details",
@@ -1582,7 +1594,8 @@ function ProductCard({
         fontWeight: tokens.typography.fontWeight.semibold,
         opacity: 0.95,
         backgroundColor: tokens.colors.surface.base,
-        userSelect: "none"
+        userSelect: "none",
+        textAlign: "center"
       }
     },
     viewDetailsLabel

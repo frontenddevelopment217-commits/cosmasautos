@@ -19,7 +19,14 @@ export function ProductActions({
   addToCartDisabled,
 }: ProductActionsProps) {
   return (
-    <Stack className={className} direction="horizontal" gap="md" align="center">
+    <Stack
+      className={className}
+      direction="horizontal"
+      gap="md"
+      align="center"
+      wrap
+      style={{ width: '100%' }}
+    >
       <WishlistButton aria-label={wishlistAriaLabel ?? 'Add to wishlist'} />
       <AddToCartButton disabled={addToCartDisabled}>
         {addToCartChildren ?? 'Add to cart'}

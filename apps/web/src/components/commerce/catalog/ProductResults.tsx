@@ -2,25 +2,10 @@ import * as React from 'react';
 
 import { EmptyProductState, ProductCard, ProductGrid, Stack } from '@cosmas/ui';
 
-export type CatalogProduct = {
-  id: string;
-  title: string;
-  description?: string;
-  brand?: string;
-  price?: string;
-  ratingValue?: string;
-  stockLabel?: string;
-  compatibleLabel?: string;
-};
+import type { InventoryVehicle } from './inventoryData';
 
 export type ProductResultsProps = {
-  products: CatalogProduct[];
-};
-
-const placeholderImage = {
-  id: 'placeholder-product-image',
-  src: 'https://via.placeholder.com/600x400?text=Product',
-  alt: 'Product image',
+  products: InventoryVehicle[];
 };
 
 export function ProductResults({ products }: ProductResultsProps) {
@@ -38,7 +23,7 @@ export function ProductResults({ products }: ProductResultsProps) {
         {products.map((p) => (
           <ProductCard
             key={p.id}
-            images={[placeholderImage]}
+            images={[{ id: p.id, src: p.image, alt: p.title }]}
             title={p.title}
             description={p.description}
             brand={p.brand}
@@ -46,6 +31,11 @@ export function ProductResults({ products }: ProductResultsProps) {
             ratingValue={p.ratingValue}
             stockLabel={p.stockLabel}
             compatibleLabel={p.compatibleLabel}
+            transmission={p.transmission}
+            fuelType={p.fuelType}
+            mileage={p.mileage}
+            year={p.year}
+            location={p.location}
             wishlistAriaLabel={`Add ${p.title} to wishlist`}
             addToCartDisabled
             addToCartChildren={null}
