@@ -20,13 +20,15 @@ export function Footer({ className, style, ...props }: FooterProps) {
   return (
     <footer
       {...props}
-      className={cn('w-full bg-[#0D0D0F] border-t border-white/10', className)}
+      className={cn('relative w-full border-t border-white/10 bg-[#0D0D0F]', className)}
       style={style}
     >
-      <div className="mx-auto max-w-7xl px-6 pt-14 pb-8 lg:px-8 xl:px-10">
-        <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#8F0B21] via-[#FF3B4E] to-[#8F0B21]" />
+
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 xl:px-10">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-6">
           {/* Brand */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 lg:col-span-2">
             <span className="font-[Fraunces,serif] text-2xl font-medium text-white">
               Cosmas<span className="text-[#C8102E]">Autos</span>
             </span>
@@ -97,6 +99,22 @@ export function Footer({ className, style, ...props }: FooterProps) {
             ))}
           </nav>
 
+          {/* Company */}
+          <nav aria-label="Company" className="flex flex-col gap-3">
+            <span className="font-[IBM_Plex_Mono,monospace] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF3B4E]">
+              Company
+            </span>
+            {['About Us', 'Careers', 'Privacy Policy', 'Terms of Service'].map((label) => (
+              <a
+                key={label}
+                href="#"
+                className="text-sm text-[#A1A1AA] transition-colors hover:text-white"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+
           {/* Contact — placeholder details, replace with real info */}
           <div className="flex flex-col gap-3">
             <span className="font-[IBM_Plex_Mono,monospace] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF3B4E]">
@@ -119,7 +137,7 @@ export function Footer({ className, style, ...props }: FooterProps) {
         </div>
 
         {/* bottom bar */}
-        <div className="flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-[IBM_Plex_Mono,monospace] text-[11px] uppercase tracking-wide text-[#71717A]">
             © {year} Cosmas Autos. All rights reserved.
           </p>

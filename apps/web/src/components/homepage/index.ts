@@ -1,4 +1,5 @@
 export { HeroSection } from './HeroSection';
+export { StatsSection } from './StatsSection';
 export { FeaturedCategoriesSection } from './FeaturedCategoriesSection';
 export { BrowseByBrand } from './BrowseByBrand';
 export { FeaturedProductsSection } from './FeaturedProductsSection';

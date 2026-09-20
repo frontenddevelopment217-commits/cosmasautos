@@ -8,10 +8,4 @@
  ✓ Compiled successfully
    Linting and checking validity of types ...
  ⚠ TypeScript project references are not fully supported. Attempting to build in incremental mode.
-   Collecting page data ...
-   Generating static pages (0/4) ...
-   Generating static pages (1/4) 
-   Generating static pages (2/4) 
-   Generating static pages (3/4) 
- ✓ Generating static pages (4/4)
 Terminate batch job (Y/N)? 

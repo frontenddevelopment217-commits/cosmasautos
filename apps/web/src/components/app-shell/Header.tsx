@@ -124,10 +124,10 @@ export function Header({ className, style, ...props }: HeaderProps) {
           <Image
             src="/images/logos/hero-banner.svg"
             alt="Cosmas Autos"
-            width={240}
+            width={200}
             height={56}
             priority
-            style={{ width: 'auto', height: 52, objectFit: 'contain' }}
+            className="h-9 w-auto object-contain sm:h-10 lg:h-[52px]"
           />
         </Link>
 
