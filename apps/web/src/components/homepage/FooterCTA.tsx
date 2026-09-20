@@ -28,7 +28,7 @@ export const FooterCTA = function FooterCTA({ className, ...props }: FooterCTAPr
               Ready to Drive Your Next Car?
             </Heading>
             <Text as="p" className="text-white/70">
-              Browse available inventory, or tell us what you're looking for and our team will
+              Browse available inventory, or tell us what you&apos;re looking for and our team will
               source it.
             </Text>
             <PrimaryButton className="!rounded-[2px] !bg-[#C8102E] !px-7 !py-3.5 !text-xs !font-semibold !uppercase !tracking-[0.1em] !text-white hover:!bg-[#8F0B21]">

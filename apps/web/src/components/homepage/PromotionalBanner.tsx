@@ -22,7 +22,7 @@ export const PromotionalBanner = function PromotionalBanner({
             className="mx-auto flex max-w-2xl flex-col gap-5"
           >
             <span className="font-[IBM_Plex_Mono,monospace] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF3B4E]">
-              Can't find it in stock?
+              Can&apos;t find it in stock?
             </span>
             <Heading
               as="h2"
