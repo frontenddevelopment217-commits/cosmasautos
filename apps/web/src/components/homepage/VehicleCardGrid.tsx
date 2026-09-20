@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid, Heading, Section, Text, Card, cn } from '@cosmas/ui';
+import { Heading, Section, Text, Card, cn } from '@cosmas/ui';
 
 import { Stack } from '@cosmas/ui';
 import { VehicleImage } from '../common/VehicleImage';
@@ -56,11 +56,7 @@ export function VehicleCardGrid({
             </span>
           </div>
 
-          <Grid
-            columns={4}
-            gap="lg"
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((v) => (
               <Card
                 key={v.title}
@@ -168,7 +164,7 @@ export function VehicleCardGrid({
                 </a>
               </Card>
             ))}
-          </Grid>
+          </div>
         </Stack>
       </div>
     </Section>

@@ -1440,6 +1440,7 @@ function ImageGallery({ className, images, height = 240 }) {
         key: img.id,
         "aria-label": img.alt ?? "Product image",
         style: {
+          position: "relative",
           width: "100%",
           height,
           borderRadius: tokens.radius.sm,
@@ -1459,12 +1460,10 @@ function ImageGallery({ className, images, height = 240 }) {
           style: {
             width: "100%",
             height: "100%",
-            objectFit: "cover",
-            opacity: 0.25
+            objectFit: "cover"
           }
         }
-      ) : null,
-      /* @__PURE__ */ React39.createElement(
+      ) : /* @__PURE__ */ React39.createElement(
         "span",
         {
           style: {
@@ -1472,7 +1471,6 @@ function ImageGallery({ className, images, height = 240 }) {
             fontSize: tokens.typography.fontSize.sm,
             fontWeight: tokens.typography.fontWeight.semibold,
             opacity: 0.8,
-            position: "absolute",
             padding: tokens.spacing.sm,
             textAlign: "center"
           }

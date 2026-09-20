@@ -3,25 +3,19 @@ import * as React from 'react';
 import { tokens } from '../../styles';
 import { cn } from '../../utils';
 
-/**
- * Grid.
- *
- * CSS grid layout with tokenized gap and fixed column counts.
- */
 export type GridProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'children' | 'className'> & {
-  /** Layout contents */
   children?: React.ReactNode;
-  /** Optional extra className */
   className?: string;
-  /** Number of columns */
   columns?: 1 | 2 | 3 | 4 | 5 | 6;
-  /** Tokenized grid gap */
   gap?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  /** When true, ignores `columns` and auto-fits as many columns as fit, each at least `minItemWidth` wide. */
+  responsive?: boolean;
+  /** Minimum width per item when `responsive` is true. Defaults to 260px. */
+  minItemWidth?: number;
 };
 
 const gapByToken: Record<NonNullable<GridProps['gap']>, string> = {
   none: '0',
-
   xs: tokens.spacing.xs,
   sm: tokens.spacing.sm,
   md: tokens.spacing.md,
@@ -29,11 +23,8 @@ const gapByToken: Record<NonNullable<GridProps['gap']>, string> = {
   xl: tokens.spacing.xl,
 };
 
-/**
- * Layout primitive for simple fixed-column grids.
- */
 export const Grid = React.forwardRef<HTMLDivElement, GridProps>(function Grid(
-  { children, className, columns = 1, gap = 'md', ...rest },
+  { children, className, columns = 1, gap = 'md', responsive, minItemWidth = 260, ...rest },
   ref,
 ) {
   return (
@@ -43,7 +34,9 @@ export const Grid = React.forwardRef<HTMLDivElement, GridProps>(function Grid(
       style={
         {
           display: 'grid',
-          gridTemplateColumns: `repeat(${columns},minmax(0,1fr))`,
+          gridTemplateColumns: responsive
+            ? `repeat(auto-fit, minmax(min(${minItemWidth}px, 100%), 1fr))`
+            : `repeat(${columns},minmax(0,1fr))`,
           gap: gapByToken[gap],
         } as React.CSSProperties
       }

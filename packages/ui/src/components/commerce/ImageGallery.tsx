@@ -36,6 +36,7 @@ export function ImageGallery({ className, images, height = 240 }: ImageGalleryPr
             key={img.id}
             aria-label={img.alt ?? 'Product image'}
             style={{
+              position: 'relative',
               width: '100%',
               height,
               borderRadius: tokens.radius.sm,
@@ -55,23 +56,22 @@ export function ImageGallery({ className, images, height = 240 }: ImageGalleryPr
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  opacity: 0.25,
                 }}
               />
-            ) : null}
-            <span
-              style={{
-                fontFamily: tokens.typography.fontFamily.sans,
-                fontSize: tokens.typography.fontSize.sm,
-                fontWeight: tokens.typography.fontWeight.semibold,
-                opacity: 0.8,
-                position: 'absolute',
-                padding: tokens.spacing.sm,
-                textAlign: 'center',
-              }}
-            >
-              Image placeholder
-            </span>
+            ) : (
+              <span
+                style={{
+                  fontFamily: tokens.typography.fontFamily.sans,
+                  fontSize: tokens.typography.fontSize.sm,
+                  fontWeight: tokens.typography.fontWeight.semibold,
+                  opacity: 0.8,
+                  padding: tokens.spacing.sm,
+                  textAlign: 'center',
+                }}
+              >
+                Image placeholder
+              </span>
+            )}
           </div>
         ))}
       </div>

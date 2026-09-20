@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Card, Heading, Section, Text, Grid } from '@cosmas/ui';
+import { Card, Heading, Section, Text } from '@cosmas/ui';
 import { Stack } from '@cosmas/ui';
 import { cn } from '@cosmas/ui';
 import { VehicleImage } from '../common/VehicleImage';
@@ -82,11 +82,7 @@ export const FeaturedCategoriesSection = function FeaturedCategoriesSection({
             </Text>
           </div>
 
-          <Grid
-            columns={4}
-            gap="md"
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((cat) => (
               <Card
                 key={cat.title}
@@ -129,7 +125,7 @@ export const FeaturedCategoriesSection = function FeaturedCategoriesSection({
                 </a>
               </Card>
             ))}
-          </Grid>
+          </div>
         </Stack>
       </div>
     </Section>

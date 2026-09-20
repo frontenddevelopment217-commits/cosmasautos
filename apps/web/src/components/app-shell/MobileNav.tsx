@@ -76,7 +76,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         </div>
 
         {/* closes the drawer when a link inside is tapped */}
-        <div onClick={onClose}>
+        <div onClick={onClose} style={{ width: '100%' }}>
           <NavigationMenu variant="vertical" />
         </div>
       </nav>
