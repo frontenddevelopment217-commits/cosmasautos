@@ -8,7 +8,10 @@ import { cn } from '../../utils';
  *
  * Centers content horizontally with a max-width based on `size`.
  */
-export type ContainerProps = {
+export type ContainerProps = Omit<
+  React.ComponentPropsWithoutRef<'div'>,
+  'children' | 'className'
+> & {
   /** Layout contents */
   children?: React.ReactNode;
   /** Optional extra className */
@@ -32,7 +35,7 @@ const maxWidthBySize: Record<
  * Layout primitive for consistent horizontal centering.
  */
 export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(function Container(
-  { children, className, size = 'md' },
+  { children, className, size = 'md', ...rest },
   ref,
 ) {
   return (
@@ -47,6 +50,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(functi
           paddingInline: tokens.spacing.lg,
         } as React.CSSProperties
       }
+      {...rest}
     >
       {children}
     </div>

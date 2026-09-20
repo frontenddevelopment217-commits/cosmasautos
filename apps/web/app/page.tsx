@@ -1,7 +1,26 @@
-import { colors } from '@cosmas/ui';
+import * as React from 'react';
+
+import {
+
+  FeaturedCategoriesSection,
+  FeaturedProductsSection,
+  FooterCTA,
+  HeroSection,
+  PromotionalBanner,
+  WhyChooseUsSection,
+  BrowseByBrand,
+} from '../src/components/homepage';
 
 export default function Page() {
-  console.log(colors);
-
-  return <div>Cosmas Autos</div>;
+  return (
+    <>
+      <HeroSection />
+      <FeaturedCategoriesSection />
+      <FeaturedProductsSection />
+      <PromotionalBanner />
+      <WhyChooseUsSection />
+      <BrowseByBrand />
+      <FooterCTA />
+    </>
+  );
 }

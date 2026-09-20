@@ -1,7 +1,8 @@
-# TODO — Phase 4.5 — Layout Foundation
-
-- [ ] Implement `Container`, `Section`, `Stack`, `Grid` per spec using tokens + `cn()` + `forwardRef`
-- [ ] Update `packages/ui/src/components/layout/index.ts` exports to include prop types
-- [ ] Run builds/typecheck in the exact required order
-- [ ] Report results and stop on any failure
-
+- [ ] Inspect existing homepage components and vehicle card/image implementations
+- [ ] Fix hero banner: Next.js Image, responsive full-width, 70–80vh, dark overlay, fallback image
+- [ ] Remove all “Image placeholder” elements from homepage
+- [ ] Ensure featured vehicle cards use real images from /public/images/vehicles
+- [ ] Only use /images/placeholders/car-placeholder.png when referenced file is missing
+- [ ] Redesign featured vehicle cards: responsive grids (4/5/2/1), premium spacing/typography, hover shadow + lift + smooth transition, image top with aspect-[4/3]
+- [ ] Ensure every section is responsive
+- [ ] Run `pnpm lint`, `pnpm typecheck`, `pnpm build` and fix all issues

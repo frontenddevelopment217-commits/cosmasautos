@@ -1,2 +1,19 @@
+# dependencies
 node_modules/
-.pnpm-store/
+
+# build outputs
+.next/
+dist/
+out/
+
+# turbo
+.turbo/
+
+# env files
+.env
+.env.local
+.env*.local
+
+# misc
+.DS_Store
+*.log

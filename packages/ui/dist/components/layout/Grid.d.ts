@@ -4,7 +4,7 @@ import * as React from 'react';
  *
  * CSS grid layout with tokenized gap and fixed column counts.
  */
-export type GridProps = {
+export type GridProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'children' | 'className'> & {
     /** Layout contents */
     children?: React.ReactNode;
     /** Optional extra className */
@@ -17,4 +17,13 @@ export type GridProps = {
 /**
  * Layout primitive for simple fixed-column grids.
  */
-export declare const Grid: React.ForwardRefExoticComponent<GridProps & React.RefAttributes<HTMLDivElement>>;
+export declare const Grid: React.ForwardRefExoticComponent<Omit<Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref">, "children" | "className"> & {
+    /** Layout contents */
+    children?: React.ReactNode;
+    /** Optional extra className */
+    className?: string;
+    /** Number of columns */
+    columns?: 1 | 2 | 3 | 4 | 5 | 6;
+    /** Tokenized grid gap */
+    gap?: "none" | "xs" | "sm" | "md" | "lg" | "xl";
+} & React.RefAttributes<HTMLDivElement>>;

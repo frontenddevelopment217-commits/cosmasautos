@@ -1,5 +1,56 @@
+export { SectionHeading } from './SectionHeading';
+export type { SectionHeadingProps } from './SectionHeading';
+
+export { PriceDisplay } from './PriceDisplay';
+export type { PriceDisplayProps } from './PriceDisplay';
+
+export { StockBadge } from './StockBadge';
+export type { StockBadgeProps } from './StockBadge';
+
+export { BrandBadge } from './BrandBadge';
+export type { BrandBadgeProps } from './BrandBadge';
+
+export { CompatibilityBadge } from './CompatibilityBadge';
+export type { CompatibilityBadgeProps } from './CompatibilityBadge';
+
+export { Rating } from './Rating';
+export type { RatingProps } from './Rating';
+
 export { VehicleCard } from './VehicleCard';
 export type { VehicleCardProps } from './VehicleCard';
 
 export { Price } from './Price';
 export type { PriceProps } from './Price';
+
+export { WishlistButton } from './WishlistButton';
+export type { WishlistButtonProps } from './WishlistButton';
+
+export { AddToCartButton } from './AddToCartButton';
+export type { AddToCartButtonProps } from './AddToCartButton';
+
+export { ProductActions } from './ProductActions';
+export type { ProductActionsProps } from './ProductActions';
+
+export { VehicleSpecs } from './VehicleSpecs';
+export type { VehicleSpecsProps } from './VehicleSpecs';
+
+export { EmptyProductState } from './EmptyProductState';
+export type { EmptyProductStateProps } from './EmptyProductState';
+
+export { ImageGallery } from './ImageGallery';
+export type { ImageGalleryProps, ImagePlaceholder } from './ImageGallery';
+
+export { ProductGallery } from './ProductGallery';
+export type { ProductGalleryProps } from './ProductGallery';
+
+export { ProductCard } from './ProductCard';
+export type { ProductCardProps } from './ProductCard';
+
+export { CategoryCard } from './CategoryCard';
+export type { CategoryCardProps } from './CategoryCard';
+
+export { ProductListItem } from './ProductListItem';
+export type { ProductListItemProps } from './ProductListItem';
+
+export { ProductGrid } from './ProductGrid';
+export type { ProductGridProps } from './ProductGrid';

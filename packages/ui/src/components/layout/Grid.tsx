@@ -8,7 +8,7 @@ import { cn } from '../../utils';
  *
  * CSS grid layout with tokenized gap and fixed column counts.
  */
-export type GridProps = {
+export type GridProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'children' | 'className'> & {
   /** Layout contents */
   children?: React.ReactNode;
   /** Optional extra className */
@@ -21,6 +21,7 @@ export type GridProps = {
 
 const gapByToken: Record<NonNullable<GridProps['gap']>, string> = {
   none: '0',
+
   xs: tokens.spacing.xs,
   sm: tokens.spacing.sm,
   md: tokens.spacing.md,
@@ -32,7 +33,7 @@ const gapByToken: Record<NonNullable<GridProps['gap']>, string> = {
  * Layout primitive for simple fixed-column grids.
  */
 export const Grid = React.forwardRef<HTMLDivElement, GridProps>(function Grid(
-  { children, className, columns = 1, gap = 'md' },
+  { children, className, columns = 1, gap = 'md', ...rest },
   ref,
 ) {
   return (
@@ -46,6 +47,7 @@ export const Grid = React.forwardRef<HTMLDivElement, GridProps>(function Grid(
           gap: gapByToken[gap],
         } as React.CSSProperties
       }
+      {...rest}
     >
       {children}
     </div>

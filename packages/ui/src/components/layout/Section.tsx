@@ -17,7 +17,10 @@ export type SectionProps = {
   as?: 'section' | 'main' | 'article' | 'aside';
   /** Vertical spacing preset */
   spacing?: 'none' | 'sm' | 'md' | 'lg';
-};
+} & Omit<
+  React.ComponentPropsWithoutRef<'section'>,
+  'as' | 'children' | 'className' | 'style' | 'ref'
+>;
 
 const paddingYBySpacing: Record<
   NonNullable<SectionProps['spacing']>,
@@ -33,7 +36,7 @@ const paddingYBySpacing: Record<
  * Layout primitive for vertical rhythm.
  */
 export const Section = React.forwardRef<HTMLElement, SectionProps>(function Section(
-  { children, className, as = 'section', spacing = 'md' },
+  { children, className, as = 'section', spacing = 'md', ...rest },
   ref,
 ) {
   const Element = as;
@@ -42,12 +45,12 @@ export const Section = React.forwardRef<HTMLElement, SectionProps>(function Sect
     <Element
       ref={ref as unknown as React.Ref<HTMLElement>}
       className={cn('ui-section', className)}
-      style={
-        {
-          paddingTop: paddingYBySpacing[spacing],
-          paddingBottom: paddingYBySpacing[spacing],
-        } as React.CSSProperties
-      }
+      style={{
+        paddingTop: paddingYBySpacing[spacing],
+        paddingBottom: paddingYBySpacing[spacing],
+        ...(rest as unknown as { style?: React.CSSProperties }).style,
+      }}
+      {...(rest as typeof rest)}
     >
       {children}
     </Element>
